@@ -2,20 +2,18 @@ project:
   type: website
 
 website:
-  title: "Blog"
   navbar:
     right:
-      - icon: github
-        href: https://github.com/
-      - icon: twitter
-        href: https://twitter.com
+      - href: https://madhav-kanda.github.io/
+        text: Home
+
 format:
   html:
     theme: litera
     css: styles.css
 
 execute:
-  freeze: auto
+  freeze: True
 
 
 
