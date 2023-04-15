@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://Madhav-Kanda.github.io/blogs/index.html</loc>
-    <lastmod>2023-04-15T13:47:44.562Z</lastmod>
+    <loc>https://github.com/Madhav-Kanda/blogs/posts/welcome/index.html</loc>
+    <lastmod>2023-04-15T13:59:29.984Z</lastmod>
   </url>
   <url>
-    <loc>https://Madhav-Kanda.github.io/blogs/posts/post-with-code/index.html</loc>
-    <lastmod>2023-04-15T13:47:45.014Z</lastmod>
+    <loc>https://github.com/Madhav-Kanda/blogs/posts/post-with-code/index.html</loc>
+    <lastmod>2023-04-15T13:59:30.716Z</lastmod>
   </url>
   <url>
-    <loc>https://Madhav-Kanda.github.io/blogs/posts/welcome/index.html</loc>
-    <lastmod>2023-04-15T13:47:45.772Z</lastmod>
+    <loc>https://github.com/Madhav-Kanda/blogs/posts/2023-04-12-la.html</loc>
+    <lastmod>2023-04-15T13:59:31.144Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/Madhav-Kanda/blogs/index.html</loc>
+    <lastmod>2023-04-15T13:59:31.532Z</lastmod>
   </url>
 </urlset>
