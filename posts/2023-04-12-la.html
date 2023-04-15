@@ -10,7 +10,7 @@
 <meta name="dcterms.date" content="2023-03-28">
 <meta name="description" content="Implementing Laplace Approximation in JAX">
 
-<title>Laplace Approximation</title>
+<title>Blog - Laplace Approximation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -136,6 +136,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Blog</span>
+    </a>
+  </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
@@ -197,15 +202,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#sampling-from-the-bernouli-distribution-with-theta-0.7" id="toc-sampling-from-the-bernouli-distribution-with-theta-0.7" class="nav-link active" data-scroll-target="#sampling-from-the-bernouli-distribution-with-theta-0.7"><strong>Sampling from the Bernouli distribution with <span class="math inline">\(\theta\)</span> = 0.7</strong></a></li>
-  <li><a href="#negative-log-joint" id="toc-negative-log-joint" class="nav-link" data-scroll-target="#negative-log-joint"><strong>Negative log joint</strong></a></li>
-  <li><a href="#calculating-theta_map-by-minimising-the-negative-log-joint-using-gradient-descent" id="toc-calculating-theta_map-by-minimising-the-negative-log-joint-using-gradient-descent" class="nav-link" data-scroll-target="#calculating-theta_map-by-minimising-the-negative-log-joint-using-gradient-descent"><strong>Calculating <span class="math inline">\(\theta_{map}\)</span> by minimising the negative log joint using gradient descent</strong></a></li>
-  <li><a href="#verification-of-obtained-theta_map-value-using-the-formula" id="toc-verification-of-obtained-theta_map-value-using-the-formula" class="nav-link" data-scroll-target="#verification-of-obtained-theta_map-value-using-the-formula"><strong>Verification of obtained <span class="math inline">\(\theta_{map}\)</span> value using the formula:</strong></a></li>
-  <li><a href="#theta_map-fracn_halpha-1n_hn_talphabeta-2" id="toc-theta_map-fracn_halpha-1n_hn_talphabeta-2" class="nav-link" data-scroll-target="#theta_map-fracn_halpha-1n_hn_talphabeta-2"><strong><span class="math inline">\(\theta_{map} = \frac{n_h+\alpha-1}{n_h+n_t+\alpha+\beta-2}\)</span></strong></a></li>
-  <li><a href="#computing-hessian-and-covariance" id="toc-computing-hessian-and-covariance" class="nav-link" data-scroll-target="#computing-hessian-and-covariance"><strong>Computing Hessian and Covariance</strong></a>
-  <ul class="collapse">
-  <li><a href="#plots-comparing-the-distribution-obtained-using-laplace-approximation-with-actual-beta-bernoulli-posterior" id="toc-plots-comparing-the-distribution-obtained-using-laplace-approximation-with-actual-beta-bernoulli-posterior" class="nav-link" data-scroll-target="#plots-comparing-the-distribution-obtained-using-laplace-approximation-with-actual-beta-bernoulli-posterior"><strong>Plots Comparing the distribution obtained using Laplace approximation with actual Beta Bernoulli posterior</strong></a></li>
-  </ul></li>
+  <li><a href="#sampling-from-the-bernouli-distribution-with-theta-0.7" id="toc-sampling-from-the-bernouli-distribution-with-theta-0.7" class="nav-link active" data-scroll-target="#sampling-from-the-bernouli-distribution-with-theta-0.7">Sampling from the Bernouli distribution with <span class="math inline">\(\theta\)</span> = 0.7</a></li>
+  <li><a href="#negative-log-joint" id="toc-negative-log-joint" class="nav-link" data-scroll-target="#negative-log-joint">Negative log joint</a></li>
+  <li><a href="#calculating-theta_map-by-minimising-the-negative-log-joint-using-gradient-descent" id="toc-calculating-theta_map-by-minimising-the-negative-log-joint-using-gradient-descent" class="nav-link" data-scroll-target="#calculating-theta_map-by-minimising-the-negative-log-joint-using-gradient-descent">Calculating <span class="math inline">\(\theta_{map}\)</span> by minimising the negative log joint using gradient descent</a></li>
+  <li><a href="#verification-of-obtained-theta_map-value-using-the-formula" id="toc-verification-of-obtained-theta_map-value-using-the-formula" class="nav-link" data-scroll-target="#verification-of-obtained-theta_map-value-using-the-formula">Verification of obtained <span class="math inline">\(\theta_{map}\)</span> value using the formula:</a></li>
+  <li><a href="#theta_map-fracn_halpha-1n_hn_talphabeta-2" id="toc-theta_map-fracn_halpha-1n_hn_talphabeta-2" class="nav-link" data-scroll-target="#theta_map-fracn_halpha-1n_hn_talphabeta-2"><span class="math inline">\(\theta_{map} = \frac{n_h+\alpha-1}{n_h+n_t+\alpha+\beta-2}\)</span></a></li>
+  <li><a href="#computing-hessian-and-covariance" id="toc-computing-hessian-and-covariance" class="nav-link" data-scroll-target="#computing-hessian-and-covariance">Computing Hessian and Covariance</a></li>
+  <li><a href="#plots-comparing-the-distribution-obtained-using-laplace-approximation-with-actual-beta-bernoulli-posterior" id="toc-plots-comparing-the-distribution-obtained-using-laplace-approximation-with-actual-beta-bernoulli-posterior" class="nav-link" data-scroll-target="#plots-comparing-the-distribution-obtained-using-laplace-approximation-with-actual-beta-bernoulli-posterior">Plots Comparing the distribution obtained using Laplace approximation with actual Beta Bernoulli posterior</a></li>
   </ul>
 </nav>
     </div>
@@ -241,7 +244,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>logger.addFilter(CheckTypesFilter())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="sampling-from-the-bernouli-distribution-with-theta-0.7" class="level3">
-<h3 class="anchored" data-anchor-id="sampling-from-the-bernouli-distribution-with-theta-0.7"><strong>Sampling from the Bernouli distribution with <span class="math inline">\(\theta\)</span> = 0.7</strong></h3>
+<h3 class="anchored" data-anchor-id="sampling-from-the-bernouli-distribution-with-theta-0.7">Sampling from the Bernouli distribution with <span class="math inline">\(\theta\)</span> = 0.7</h3>
 <div class="cell" data-outputid="69368e1d-ef90-4624-9d88-06d8528f0f4e">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>bernoulli_samples <span class="op">=</span> tfp.distributions.Bernoulli(probs<span class="op">=</span><span class="fl">0.7</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>samples <span class="op">=</span> bernoulli_samples.sample(sample_shape<span class="op">=</span><span class="dv">100</span>, seed<span class="op">=</span>jax.random.PRNGKey(<span class="dv">0</span>))</span>
@@ -260,7 +263,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </section>
 <section id="negative-log-joint" class="level3">
-<h3 class="anchored" data-anchor-id="negative-log-joint"><strong>Negative log joint</strong></h3>
+<h3 class="anchored" data-anchor-id="negative-log-joint">Negative log joint</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> neg_logjoint(theta):</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    alpha <span class="op">=</span> <span class="dv">3</span></span>
@@ -271,7 +274,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </section>
 <section id="calculating-theta_map-by-minimising-the-negative-log-joint-using-gradient-descent" class="level3">
-<h3 class="anchored" data-anchor-id="calculating-theta_map-by-minimising-the-negative-log-joint-using-gradient-descent"><strong>Calculating <span class="math inline">\(\theta_{map}\)</span> by minimising the negative log joint using gradient descent</strong></h3>
+<h3 class="anchored" data-anchor-id="calculating-theta_map-by-minimising-the-negative-log-joint-using-gradient-descent">Calculating <span class="math inline">\(\theta_{map}\)</span> by minimising the negative log joint using gradient descent</h3>
 <div class="cell" data-outputid="b3f18857-0806-4835-9b4a-bfff12eae8ac">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>gradient <span class="op">=</span> jax.value_and_grad(jax.jit(neg_logjoint))</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>lr <span class="op">=</span> <span class="fl">0.001</span></span>
@@ -297,10 +300,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </section>
 <section id="verification-of-obtained-theta_map-value-using-the-formula" class="level3">
-<h3 class="anchored" data-anchor-id="verification-of-obtained-theta_map-value-using-the-formula"><strong>Verification of obtained <span class="math inline">\(\theta_{map}\)</span> value using the formula:</strong></h3>
+<h3 class="anchored" data-anchor-id="verification-of-obtained-theta_map-value-using-the-formula">Verification of obtained <span class="math inline">\(\theta_{map}\)</span> value using the formula:</h3>
 </section>
 <section id="theta_map-fracn_halpha-1n_hn_talphabeta-2" class="level3">
-<h3 class="anchored" data-anchor-id="theta_map-fracn_halpha-1n_hn_talphabeta-2"><strong><span class="math inline">\(\theta_{map} = \frac{n_h+\alpha-1}{n_h+n_t+\alpha+\beta-2}\)</span></strong></h3>
+<h3 class="anchored" data-anchor-id="theta_map-fracn_halpha-1n_hn_talphabeta-2"><span class="math inline">\(\theta_{map} = \frac{n_h+\alpha-1}{n_h+n_t+\alpha+\beta-2}\)</span></h3>
 <div class="cell" data-outputid="345b28ca-5dd9-48ea-86f3-fd0ba4345776">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>nH <span class="op">=</span> samples.<span class="bu">sum</span>().astype(<span class="st">"float32"</span>)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>nT <span class="op">=</span> (samples.size <span class="op">-</span> nH).astype(<span class="st">"float32"</span>)</span>
@@ -311,8 +314,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </section>
-<section id="computing-hessian-and-covariance" class="level2">
-<h2 class="anchored" data-anchor-id="computing-hessian-and-covariance"><strong>Computing Hessian and Covariance</strong></h2>
+<section id="computing-hessian-and-covariance" class="level3">
+<h3 class="anchored" data-anchor-id="computing-hessian-and-covariance">Computing Hessian and Covariance</h3>
 <div class="cell" data-outputid="476837e7-88eb-43a9-b553-54e1faa2dfc7">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>hessian <span class="op">=</span> jax.hessian(neg_logjoint)(theta_map)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>hessian <span class="op">=</span> jnp.reshape(hessian, (<span class="dv">1</span>, <span class="dv">1</span>))</span>
@@ -322,8 +325,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>DeviceArray([[0.00208645]], dtype=float32)</code></pre>
 </div>
 </div>
+</section>
 <section id="plots-comparing-the-distribution-obtained-using-laplace-approximation-with-actual-beta-bernoulli-posterior" class="level3">
-<h3 class="anchored" data-anchor-id="plots-comparing-the-distribution-obtained-using-laplace-approximation-with-actual-beta-bernoulli-posterior"><strong>Plots Comparing the distribution obtained using Laplace approximation with actual Beta Bernoulli posterior</strong></h3>
+<h3 class="anchored" data-anchor-id="plots-comparing-the-distribution-obtained-using-laplace-approximation-with-actual-beta-bernoulli-posterior">Plots Comparing the distribution obtained using Laplace approximation with actual Beta Bernoulli posterior</h3>
 <div class="cell" data-outputid="e264535e-5bf1-41c6-d91a-aa3fabf9f3d2">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> jnp.linspace(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">100</span>)</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> x.reshape(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>)</span>
@@ -363,7 +367,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
