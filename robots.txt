@@ -1,1 +1,1 @@
-Sitemap: https://Madhav-Kanda.github.io/blogs/sitemap.xml
+Sitemap: https://github.com/Madhav-Kanda/blogs/sitemap.xml
