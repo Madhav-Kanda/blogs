@@ -11,7 +11,7 @@
     "href": "posts/2023-07-21-wnr.html#what-is-reparameterisation",
     "title": "Windowed Non-Linear Reparamaterization",
     "section": "What is Reparameterisation?",
-    "text": "What is Reparameterisation?\n\nExpressing the model in terms of new variables defined by a bijective transformation of the original variables.\nFor example: One such reparameterization technique is Non-centering.\n\nConsider: z ~ \\(N(\\mu, \\sigma)\\) (centered parameterization)\nIntroducing z’ ~ \\(N(0,1)\\)\nNow, z = \\(\\mu + \\sigma z'\\) (Non-centered parameterization)"
+    "text": "What is Reparameterisation?\nExpressing the model in terms of new variables defined by a bijective transformation of the original variables. For example: One such reparameterization technique is Non-centering. * Consider: z ~ \\(N(\\mu, \\sigma)\\) (centered parameterization) * Introducing z’ ~ \\(N(0,1)\\) * Now, z = \\(\\mu + \\sigma z'\\) (Non-centered parameterization)"
   },
   {
     "objectID": "posts/2023-07-21-wnr.html#why-reparameterisation",
