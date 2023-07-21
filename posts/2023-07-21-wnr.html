@@ -100,7 +100,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -177,8 +177,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#windowed-non-linear-reparameterisation-for-probabilistic-models" id="toc-windowed-non-linear-reparameterisation-for-probabilistic-models" class="nav-link active" data-scroll-target="#windowed-non-linear-reparameterisation-for-probabilistic-models">Windowed Non-Linear Reparameterisation for probabilistic models</a></li>
-  <li><a href="#what-is-reparameterisation" id="toc-what-is-reparameterisation" class="nav-link" data-scroll-target="#what-is-reparameterisation">What is Reparameterisation?</a></li>
+  <li><a href="#what-is-reparameterisation" id="toc-what-is-reparameterisation" class="nav-link active" data-scroll-target="#what-is-reparameterisation">What is Reparameterisation?</a></li>
   <li><a href="#why-reparameterisation" id="toc-why-reparameterisation" class="nav-link" data-scroll-target="#why-reparameterisation">Why Reparameterisation?</a></li>
   <li><a href="#centeredness-vs-non-centeredness" id="toc-centeredness-vs-non-centeredness" class="nav-link" data-scroll-target="#centeredness-vs-non-centeredness">Centeredness vs Non-centeredness</a></li>
   <li><a href="#problems-with-existing-solutions" id="toc-problems-with-existing-solutions" class="nav-link" data-scroll-target="#problems-with-existing-solutions">Problems with existing solutions</a></li>
@@ -186,17 +185,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#warmup-phase" id="toc-warmup-phase" class="nav-link" data-scroll-target="#warmup-phase">Warmup Phase</a></li>
   <li><a href="#modified-warmup-phase" id="toc-modified-warmup-phase" class="nav-link" data-scroll-target="#modified-warmup-phase">Modified Warmup Phase</a></li>
   <li><a href="#loss-function" id="toc-loss-function" class="nav-link" data-scroll-target="#loss-function">Loss Function</a></li>
-  <li><a href="#experimentation" id="toc-experimentation" class="nav-link" data-scroll-target="#experimentation">Experimentation</a></li>
-  <li><a href="#experimentation-1" id="toc-experimentation-1" class="nav-link" data-scroll-target="#experimentation-1"><strong>Experimentation</strong></a>
+  <li><a href="#experimentation" id="toc-experimentation" class="nav-link" data-scroll-target="#experimentation">Experimentation</a>
   <ul class="collapse">
   <li><a href="#optimization" id="toc-optimization" class="nav-link" data-scroll-target="#optimization">Optimization</a></li>
   </ul></li>
-  <li><a href="#implementation" id="toc-implementation" class="nav-link" data-scroll-target="#implementation"><strong>Implementation</strong></a></li>
-  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results"><strong>Results</strong></a></li>
-  <li><a href="#results-1" id="toc-results-1" class="nav-link" data-scroll-target="#results-1"><strong>Results</strong></a></li>
-  <li><a href="#results-2" id="toc-results-2" class="nav-link" data-scroll-target="#results-2"><strong>Results</strong></a></li>
-  <li><a href="#future-work" id="toc-future-work" class="nav-link" data-scroll-target="#future-work"><strong>Future Work</strong></a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><strong>References</strong></a></li>
+  <li><a href="#implementation" id="toc-implementation" class="nav-link" data-scroll-target="#implementation">Implementation</a></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
+  <li><a href="#future-work" id="toc-future-work" class="nav-link" data-scroll-target="#future-work">Future Work</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
     </div>
@@ -206,9 +202,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="windowed-non-linear-reparameterisation-for-probabilistic-models" class="level2">
-<h2 class="anchored" data-anchor-id="windowed-non-linear-reparameterisation-for-probabilistic-models">Windowed Non-Linear Reparameterisation for probabilistic models</h2>
-</section>
 <section id="what-is-reparameterisation" class="level2">
 <h2 class="anchored" data-anchor-id="what-is-reparameterisation">What is Reparameterisation?</h2>
 <ul>
@@ -436,9 +429,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    kl <span class="op">=</span> <span class="op">-</span>mvn.log_prob(reparam_sample.T).mean() <span class="op">+</span> jacobian_log    </span>
 <span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> kl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="experimentation-1" class="level2">
-<h2 class="anchored" data-anchor-id="experimentation-1"><strong>Experimentation</strong></h2>
 <section id="optimization" class="level3">
 <h3 class="anchored" data-anchor-id="optimization">Optimization</h3>
 <ul>
@@ -619,7 +609,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 </section>
 <section id="implementation" class="level2">
-<h2 class="anchored" data-anchor-id="implementation"><strong>Implementation</strong></h2>
+<h2 class="anchored" data-anchor-id="implementation">Implementation</h2>
 <ul>
 <li>Modified BlackJax sampler code to incorporate the proposed algorithm.</li>
 <li>Inference time up from 2 seconds to 20 seconds.</li>
@@ -628,22 +618,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Write the model</strong></p>
 </section>
 <section id="results" class="level2">
-<h2 class="anchored" data-anchor-id="results"><strong>Results</strong></h2>
+<h2 class="anchored" data-anchor-id="results">Results</h2>
 <div style="display: flex; flex-direction: row; justify-content: space-between;">
 <div>
-<pre><code>&lt;img width="700" alt="image" src="images/wnr/true_calculated.png"&gt;</code></pre>
+<pre><code>&lt;img width="400" alt="image" src="images/wnr/true_calculated.png"&gt;</code></pre>
 </div>
 <div>
-<img width="700" alt="image" src="images/wnr/l2_norm_plot.png">
+<img width="400" alt="image" src="images/wnr/l2_norm_plot.png">
 </div>
 </div>
-</section>
-<section id="results-1" class="level2">
-<h2 class="anchored" data-anchor-id="results-1"><strong>Results</strong></h2>
-<p><img width="700" alt="image" src="images/wnr/method_comparison.png"></p>
-</section>
-<section id="results-2" class="level2">
-<h2 class="anchored" data-anchor-id="results-2"><strong>Results</strong></h2>
+<p><img width="500" alt="image" src="images/wnr/method_comparison.png"></p>
 <ul>
 <li>Lets’ compare the sampling efficieny</li>
 </ul>
@@ -658,14 +642,14 @@ Parameter &amp; ESS/ \nabla (vip) &amp; ESS/ \nabla (our) \\ \hline
 </ul>
 </section>
 <section id="future-work" class="level2">
-<h2 class="anchored" data-anchor-id="future-work"><strong>Future Work</strong></h2>
+<h2 class="anchored" data-anchor-id="future-work">Future Work</h2>
 <ul>
 <li>Changing the default window sizes.</li>
 <li>Trying different parameterization families.</li>
 </ul>
 </section>
 <section id="references" class="level2">
-<h2 class="anchored" data-anchor-id="references"><strong>References</strong></h2>
+<h2 class="anchored" data-anchor-id="references">References</h2>
 <p>[1] M.I.Gorinova,D.Moore,andM.D.Hoffman,“Automaticreparameterisation of probabilistic programs,” 2019.</p>
 <p>[2] M.Hoffman,P.Sountsov,etal.,“Neutra-lizing bad geometry in hamiltonian monte carlo using neural transport,” 2019.</p>
 
