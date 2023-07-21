@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.475">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -20,9 +20,10 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -49,43 +50,13 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -121,13 +92,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../styles.css">
@@ -144,17 +117,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <span class="navbar-title">Blog</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="https://madhav-kanda.github.io/">
+    <a class="nav-link" href="https://madhav-kanda.github.io/" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools">
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -248,15 +223,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><em>Guess the following images:</em></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="2023-04-25-cp_files/figure-html/11957538-1-image.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">image.png</figcaption><p></p>
+<p><img src="2023-04-25-cp_files/figure-html/45c3bf34-1-image.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">image.png</figcaption>
 </figure>
 </div>
 <p><em>Prediction set generated by conformal prediction for the images:</em></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="2023-04-25-cp_files/figure-html/1e24a03f-1-image.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">image.png</figcaption><p></p>
+<p><img src="2023-04-25-cp_files/figure-html/48569c93-1-image.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">image.png</figcaption>
 </figure>
 </div>
 </section>
@@ -799,207 +774,208 @@ Test set: Avg. loss: -0.8125, Accuracy: 4096/5000 (82%)
 <span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>calib_df[<span class="st">"True_idx"</span>] <span class="op">=</span> calib_target_results</span>
 <span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>calib_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="21">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>0</th>
-      <th>1</th>
-      <th>2</th>
-      <th>3</th>
-      <th>4</th>
-      <th>5</th>
-      <th>6</th>
-      <th>7</th>
-      <th>8</th>
-      <th>9</th>
-      <th>Max</th>
-      <th>Max_idx</th>
-      <th>True_idx</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>7.672552e-08</td>
-      <td>5.311417e-07</td>
-      <td>1.562821e-04</td>
-      <td>3.211690e-09</td>
-      <td>4.822823e-04</td>
-      <td>2.262360e-06</td>
-      <td>9.993560e-01</td>
-      <td>3.220139e-11</td>
-      <td>1.609646e-06</td>
-      <td>9.680530e-07</td>
-      <td>0.999356</td>
-      <td>6</td>
-      <td>6</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>7.041307e-08</td>
-      <td>1.779545e-07</td>
-      <td>6.658971e-06</td>
-      <td>4.084817e-07</td>
-      <td>6.008969e-08</td>
-      <td>1.122653e-08</td>
-      <td>1.417746e-04</td>
-      <td>1.310595e-09</td>
-      <td>9.998498e-01</td>
-      <td>9.002325e-07</td>
-      <td>0.999850</td>
-      <td>8</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>1.891271e-06</td>
-      <td>7.539936e-07</td>
-      <td>8.252732e-06</td>
-      <td>7.875642e-05</td>
-      <td>6.665982e-01</td>
-      <td>2.489255e-06</td>
-      <td>7.079141e-04</td>
-      <td>4.619782e-05</td>
-      <td>3.568919e-02</td>
-      <td>2.968663e-01</td>
-      <td>0.666598</td>
-      <td>4</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>3.600329e-08</td>
-      <td>4.196039e-09</td>
-      <td>4.928238e-06</td>
-      <td>3.145105e-09</td>
-      <td>9.909703e-01</td>
-      <td>3.594812e-08</td>
-      <td>2.783901e-05</td>
-      <td>7.394720e-06</td>
-      <td>8.526304e-07</td>
-      <td>8.988610e-03</td>
-      <td>0.990970</td>
-      <td>4</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>8.007726e-06</td>
-      <td>8.686094e-05</td>
-      <td>1.262506e-04</td>
-      <td>9.905047e-01</td>
-      <td>2.181237e-07</td>
-      <td>3.404921e-07</td>
-      <td>8.625836e-06</td>
-      <td>2.125504e-06</td>
-      <td>9.200612e-03</td>
-      <td>6.224329e-05</td>
-      <td>0.990505</td>
-      <td>3</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>4995</th>
-      <td>3.017699e-06</td>
-      <td>8.860756e-05</td>
-      <td>3.417503e-04</td>
-      <td>9.827271e-01</td>
-      <td>5.802370e-05</td>
-      <td>1.595727e-06</td>
-      <td>2.064353e-04</td>
-      <td>2.161075e-06</td>
-      <td>1.435820e-02</td>
-      <td>2.213240e-03</td>
-      <td>0.982727</td>
-      <td>3</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>4996</th>
-      <td>5.440750e-13</td>
-      <td>9.999996e-01</td>
-      <td>7.675386e-08</td>
-      <td>5.033297e-11</td>
-      <td>2.031701e-11</td>
-      <td>4.493560e-11</td>
-      <td>7.547337e-10</td>
-      <td>3.736634e-08</td>
-      <td>2.838881e-07</td>
-      <td>3.246134e-12</td>
-      <td>1.000000</td>
-      <td>1</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>4997</th>
-      <td>5.372684e-09</td>
-      <td>3.440873e-09</td>
-      <td>1.484947e-07</td>
-      <td>9.999758e-01</td>
-      <td>2.131953e-12</td>
-      <td>4.374669e-11</td>
-      <td>2.115596e-12</td>
-      <td>2.734103e-06</td>
-      <td>2.123476e-05</td>
-      <td>9.234377e-08</td>
-      <td>0.999976</td>
-      <td>3</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>4998</th>
-      <td>1.966202e-07</td>
-      <td>6.421658e-07</td>
-      <td>5.014269e-05</td>
-      <td>2.109797e-09</td>
-      <td>2.172950e-05</td>
-      <td>5.110368e-07</td>
-      <td>9.999149e-01</td>
-      <td>3.196222e-10</td>
-      <td>3.617991e-06</td>
-      <td>8.205562e-06</td>
-      <td>0.999915</td>
-      <td>6</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>4999</th>
-      <td>2.777072e-14</td>
-      <td>1.000000e+00</td>
-      <td>1.977435e-08</td>
-      <td>3.481474e-11</td>
-      <td>2.748897e-12</td>
-      <td>9.301366e-12</td>
-      <td>5.802548e-11</td>
-      <td>3.565957e-08</td>
-      <td>2.786610e-08</td>
-      <td>1.873916e-12</td>
-      <td>1.000000</td>
-      <td>1</td>
-      <td>1</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">0</th>
+<th data-quarto-table-cell-role="th">1</th>
+<th data-quarto-table-cell-role="th">2</th>
+<th data-quarto-table-cell-role="th">3</th>
+<th data-quarto-table-cell-role="th">4</th>
+<th data-quarto-table-cell-role="th">5</th>
+<th data-quarto-table-cell-role="th">6</th>
+<th data-quarto-table-cell-role="th">7</th>
+<th data-quarto-table-cell-role="th">8</th>
+<th data-quarto-table-cell-role="th">9</th>
+<th data-quarto-table-cell-role="th">Max</th>
+<th data-quarto-table-cell-role="th">Max_idx</th>
+<th data-quarto-table-cell-role="th">True_idx</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>7.672552e-08</td>
+<td>5.311417e-07</td>
+<td>1.562821e-04</td>
+<td>3.211690e-09</td>
+<td>4.822823e-04</td>
+<td>2.262360e-06</td>
+<td>9.993560e-01</td>
+<td>3.220139e-11</td>
+<td>1.609646e-06</td>
+<td>9.680530e-07</td>
+<td>0.999356</td>
+<td>6</td>
+<td>6</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>7.041307e-08</td>
+<td>1.779545e-07</td>
+<td>6.658971e-06</td>
+<td>4.084817e-07</td>
+<td>6.008969e-08</td>
+<td>1.122653e-08</td>
+<td>1.417746e-04</td>
+<td>1.310595e-09</td>
+<td>9.998498e-01</td>
+<td>9.002325e-07</td>
+<td>0.999850</td>
+<td>8</td>
+<td>8</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>1.891271e-06</td>
+<td>7.539936e-07</td>
+<td>8.252732e-06</td>
+<td>7.875642e-05</td>
+<td>6.665982e-01</td>
+<td>2.489255e-06</td>
+<td>7.079141e-04</td>
+<td>4.619782e-05</td>
+<td>3.568919e-02</td>
+<td>2.968663e-01</td>
+<td>0.666598</td>
+<td>4</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>3.600329e-08</td>
+<td>4.196039e-09</td>
+<td>4.928238e-06</td>
+<td>3.145105e-09</td>
+<td>9.909703e-01</td>
+<td>3.594812e-08</td>
+<td>2.783901e-05</td>
+<td>7.394720e-06</td>
+<td>8.526304e-07</td>
+<td>8.988610e-03</td>
+<td>0.990970</td>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>8.007726e-06</td>
+<td>8.686094e-05</td>
+<td>1.262506e-04</td>
+<td>9.905047e-01</td>
+<td>2.181237e-07</td>
+<td>3.404921e-07</td>
+<td>8.625836e-06</td>
+<td>2.125504e-06</td>
+<td>9.200612e-03</td>
+<td>6.224329e-05</td>
+<td>0.990505</td>
+<td>3</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4995</td>
+<td>3.017699e-06</td>
+<td>8.860756e-05</td>
+<td>3.417503e-04</td>
+<td>9.827271e-01</td>
+<td>5.802370e-05</td>
+<td>1.595727e-06</td>
+<td>2.064353e-04</td>
+<td>2.161075e-06</td>
+<td>1.435820e-02</td>
+<td>2.213240e-03</td>
+<td>0.982727</td>
+<td>3</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">4996</td>
+<td>5.440750e-13</td>
+<td>9.999996e-01</td>
+<td>7.675386e-08</td>
+<td>5.033297e-11</td>
+<td>2.031701e-11</td>
+<td>4.493560e-11</td>
+<td>7.547337e-10</td>
+<td>3.736634e-08</td>
+<td>2.838881e-07</td>
+<td>3.246134e-12</td>
+<td>1.000000</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4997</td>
+<td>5.372684e-09</td>
+<td>3.440873e-09</td>
+<td>1.484947e-07</td>
+<td>9.999758e-01</td>
+<td>2.131953e-12</td>
+<td>4.374669e-11</td>
+<td>2.115596e-12</td>
+<td>2.734103e-06</td>
+<td>2.123476e-05</td>
+<td>9.234377e-08</td>
+<td>0.999976</td>
+<td>3</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">4998</td>
+<td>1.966202e-07</td>
+<td>6.421658e-07</td>
+<td>5.014269e-05</td>
+<td>2.109797e-09</td>
+<td>2.172950e-05</td>
+<td>5.110368e-07</td>
+<td>9.999149e-01</td>
+<td>3.196222e-10</td>
+<td>3.617991e-06</td>
+<td>8.205562e-06</td>
+<td>0.999915</td>
+<td>6</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4999</td>
+<td>2.777072e-14</td>
+<td>1.000000e+00</td>
+<td>1.977435e-08</td>
+<td>3.481474e-11</td>
+<td>2.748897e-12</td>
+<td>9.301366e-12</td>
+<td>5.802548e-11</td>
+<td>3.565957e-08</td>
+<td>2.786610e-08</td>
+<td>1.873916e-12</td>
+<td>1.000000</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
 </table>
+
 <p>5000 rows × 13 columns</p>
 </div>
 </div>
@@ -1011,207 +987,208 @@ Test set: Avg. loss: -0.8125, Accuracy: 4096/5000 (82%)
 <span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>test_df[<span class="st">"True_idx"</span>] <span class="op">=</span> test_target_results</span>
 <span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>test_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="22">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>0</th>
-      <th>1</th>
-      <th>2</th>
-      <th>3</th>
-      <th>4</th>
-      <th>5</th>
-      <th>6</th>
-      <th>7</th>
-      <th>8</th>
-      <th>9</th>
-      <th>Max</th>
-      <th>Max_idx</th>
-      <th>True_idx</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1.507169e-09</td>
-      <td>6.793355e-10</td>
-      <td>9.392306e-10</td>
-      <td>3.272889e-09</td>
-      <td>4.279739e-09</td>
-      <td>1.000421e-10</td>
-      <td>7.060916e-13</td>
-      <td>9.973305e-01</td>
-      <td>3.673427e-07</td>
-      <td>2.669133e-03</td>
-      <td>0.997331</td>
-      <td>7</td>
-      <td>7</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1.528662e-08</td>
-      <td>4.265159e-12</td>
-      <td>3.008223e-05</td>
-      <td>9.999698e-01</td>
-      <td>1.717640e-15</td>
-      <td>2.861857e-14</td>
-      <td>1.901743e-12</td>
-      <td>4.749006e-13</td>
-      <td>8.433129e-08</td>
-      <td>6.817440e-14</td>
-      <td>0.999970</td>
-      <td>3</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>1.440134e-10</td>
-      <td>3.157558e-06</td>
-      <td>2.407116e-05</td>
-      <td>5.108404e-11</td>
-      <td>5.610714e-07</td>
-      <td>1.101829e-08</td>
-      <td>9.999588e-01</td>
-      <td>4.209422e-15</td>
-      <td>1.334558e-05</td>
-      <td>3.933881e-10</td>
-      <td>0.999959</td>
-      <td>6</td>
-      <td>6</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>6.468001e-12</td>
-      <td>9.999986e-01</td>
-      <td>3.110969e-07</td>
-      <td>3.365797e-09</td>
-      <td>3.275069e-11</td>
-      <td>3.477734e-10</td>
-      <td>1.458348e-08</td>
-      <td>3.999051e-08</td>
-      <td>1.144535e-06</td>
-      <td>1.596769e-10</td>
-      <td>0.999999</td>
-      <td>1</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>8.815193e-05</td>
-      <td>6.341890e-03</td>
-      <td>8.312734e-04</td>
-      <td>1.951014e-04</td>
-      <td>1.125594e-02</td>
-      <td>2.372148e-04</td>
-      <td>7.425601e-03</td>
-      <td>1.311864e-03</td>
-      <td>1.279543e-02</td>
-      <td>9.595175e-01</td>
-      <td>0.959518</td>
-      <td>9</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>4995</th>
-      <td>2.418953e-08</td>
-      <td>7.203251e-08</td>
-      <td>1.530548e-07</td>
-      <td>2.897828e-06</td>
-      <td>5.851566e-07</td>
-      <td>6.657368e-09</td>
-      <td>3.703725e-08</td>
-      <td>6.012499e-05</td>
-      <td>9.920814e-01</td>
-      <td>7.854681e-03</td>
-      <td>0.992081</td>
-      <td>8</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <th>4996</th>
-      <td>4.415281e-09</td>
-      <td>1.504091e-08</td>
-      <td>2.217878e-06</td>
-      <td>9.999076e-01</td>
-      <td>1.170547e-09</td>
-      <td>1.767450e-10</td>
-      <td>1.133458e-08</td>
-      <td>1.103373e-09</td>
-      <td>8.993938e-05</td>
-      <td>2.646218e-07</td>
-      <td>0.999908</td>
-      <td>3</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>4997</th>
-      <td>1.863301e-18</td>
-      <td>3.640452e-17</td>
-      <td>5.301770e-13</td>
-      <td>5.253428e-15</td>
-      <td>9.999909e-01</td>
-      <td>7.949940e-15</td>
-      <td>1.362663e-11</td>
-      <td>6.954227e-13</td>
-      <td>6.574446e-12</td>
-      <td>9.051804e-06</td>
-      <td>0.999991</td>
-      <td>4</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>4998</th>
-      <td>6.859559e-17</td>
-      <td>7.214033e-16</td>
-      <td>3.279532e-11</td>
-      <td>1.938939e-14</td>
-      <td>9.999964e-01</td>
-      <td>1.438514e-13</td>
-      <td>1.612270e-10</td>
-      <td>2.956339e-12</td>
-      <td>7.959585e-12</td>
-      <td>3.579523e-06</td>
-      <td>0.999996</td>
-      <td>4</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>4999</th>
-      <td>2.643393e-01</td>
-      <td>7.046102e-07</td>
-      <td>1.252546e-02</td>
-      <td>5.733218e-01</td>
-      <td>1.109647e-07</td>
-      <td>3.844558e-07</td>
-      <td>2.375773e-02</td>
-      <td>1.729390e-07</td>
-      <td>1.260542e-01</td>
-      <td>1.263923e-07</td>
-      <td>0.573322</td>
-      <td>3</td>
-      <td>5</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">0</th>
+<th data-quarto-table-cell-role="th">1</th>
+<th data-quarto-table-cell-role="th">2</th>
+<th data-quarto-table-cell-role="th">3</th>
+<th data-quarto-table-cell-role="th">4</th>
+<th data-quarto-table-cell-role="th">5</th>
+<th data-quarto-table-cell-role="th">6</th>
+<th data-quarto-table-cell-role="th">7</th>
+<th data-quarto-table-cell-role="th">8</th>
+<th data-quarto-table-cell-role="th">9</th>
+<th data-quarto-table-cell-role="th">Max</th>
+<th data-quarto-table-cell-role="th">Max_idx</th>
+<th data-quarto-table-cell-role="th">True_idx</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1.507169e-09</td>
+<td>6.793355e-10</td>
+<td>9.392306e-10</td>
+<td>3.272889e-09</td>
+<td>4.279739e-09</td>
+<td>1.000421e-10</td>
+<td>7.060916e-13</td>
+<td>9.973305e-01</td>
+<td>3.673427e-07</td>
+<td>2.669133e-03</td>
+<td>0.997331</td>
+<td>7</td>
+<td>7</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>1.528662e-08</td>
+<td>4.265159e-12</td>
+<td>3.008223e-05</td>
+<td>9.999698e-01</td>
+<td>1.717640e-15</td>
+<td>2.861857e-14</td>
+<td>1.901743e-12</td>
+<td>4.749006e-13</td>
+<td>8.433129e-08</td>
+<td>6.817440e-14</td>
+<td>0.999970</td>
+<td>3</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>1.440134e-10</td>
+<td>3.157558e-06</td>
+<td>2.407116e-05</td>
+<td>5.108404e-11</td>
+<td>5.610714e-07</td>
+<td>1.101829e-08</td>
+<td>9.999588e-01</td>
+<td>4.209422e-15</td>
+<td>1.334558e-05</td>
+<td>3.933881e-10</td>
+<td>0.999959</td>
+<td>6</td>
+<td>6</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>6.468001e-12</td>
+<td>9.999986e-01</td>
+<td>3.110969e-07</td>
+<td>3.365797e-09</td>
+<td>3.275069e-11</td>
+<td>3.477734e-10</td>
+<td>1.458348e-08</td>
+<td>3.999051e-08</td>
+<td>1.144535e-06</td>
+<td>1.596769e-10</td>
+<td>0.999999</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>8.815193e-05</td>
+<td>6.341890e-03</td>
+<td>8.312734e-04</td>
+<td>1.951014e-04</td>
+<td>1.125594e-02</td>
+<td>2.372148e-04</td>
+<td>7.425601e-03</td>
+<td>1.311864e-03</td>
+<td>1.279543e-02</td>
+<td>9.595175e-01</td>
+<td>0.959518</td>
+<td>9</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4995</td>
+<td>2.418953e-08</td>
+<td>7.203251e-08</td>
+<td>1.530548e-07</td>
+<td>2.897828e-06</td>
+<td>5.851566e-07</td>
+<td>6.657368e-09</td>
+<td>3.703725e-08</td>
+<td>6.012499e-05</td>
+<td>9.920814e-01</td>
+<td>7.854681e-03</td>
+<td>0.992081</td>
+<td>8</td>
+<td>8</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">4996</td>
+<td>4.415281e-09</td>
+<td>1.504091e-08</td>
+<td>2.217878e-06</td>
+<td>9.999076e-01</td>
+<td>1.170547e-09</td>
+<td>1.767450e-10</td>
+<td>1.133458e-08</td>
+<td>1.103373e-09</td>
+<td>8.993938e-05</td>
+<td>2.646218e-07</td>
+<td>0.999908</td>
+<td>3</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4997</td>
+<td>1.863301e-18</td>
+<td>3.640452e-17</td>
+<td>5.301770e-13</td>
+<td>5.253428e-15</td>
+<td>9.999909e-01</td>
+<td>7.949940e-15</td>
+<td>1.362663e-11</td>
+<td>6.954227e-13</td>
+<td>6.574446e-12</td>
+<td>9.051804e-06</td>
+<td>0.999991</td>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">4998</td>
+<td>6.859559e-17</td>
+<td>7.214033e-16</td>
+<td>3.279532e-11</td>
+<td>1.938939e-14</td>
+<td>9.999964e-01</td>
+<td>1.438514e-13</td>
+<td>1.612270e-10</td>
+<td>2.956339e-12</td>
+<td>7.959585e-12</td>
+<td>3.579523e-06</td>
+<td>0.999996</td>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4999</td>
+<td>2.643393e-01</td>
+<td>7.046102e-07</td>
+<td>1.252546e-02</td>
+<td>5.733218e-01</td>
+<td>1.109647e-07</td>
+<td>3.844558e-07</td>
+<td>2.375773e-02</td>
+<td>1.729390e-07</td>
+<td>1.260542e-01</td>
+<td>1.263923e-07</td>
+<td>0.573322</td>
+<td>3</td>
+<td>5</td>
+</tr>
+</tbody>
 </table>
+
 <p>5000 rows × 13 columns</p>
 </div>
 </div>
@@ -1228,207 +1205,208 @@ Test set: Avg. loss: -0.8125, Accuracy: 4096/5000 (82%)
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>calib_df_std <span class="op">=</span> calib_df.loc[min_std_indices_cal]</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>calib_df_std</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="24">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>0</th>
-      <th>1</th>
-      <th>2</th>
-      <th>3</th>
-      <th>4</th>
-      <th>5</th>
-      <th>6</th>
-      <th>7</th>
-      <th>8</th>
-      <th>9</th>
-      <th>Max</th>
-      <th>Max_idx</th>
-      <th>True_idx</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>4792</th>
-      <td>2.204627e-01</td>
-      <td>1.263805e-02</td>
-      <td>1.064651e-01</td>
-      <td>2.497595e-02</td>
-      <td>3.831481e-02</td>
-      <td>1.915999e-02</td>
-      <td>2.428759e-01</td>
-      <td>4.884591e-02</td>
-      <td>2.138946e-01</td>
-      <td>7.236703e-02</td>
-      <td>0.242876</td>
-      <td>6</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <th>3635</th>
-      <td>3.720535e-03</td>
-      <td>3.984575e-02</td>
-      <td>6.415164e-02</td>
-      <td>8.764555e-02</td>
-      <td>3.574266e-01</td>
-      <td>1.044143e-02</td>
-      <td>2.420991e-02</td>
-      <td>2.146130e-01</td>
-      <td>4.631169e-02</td>
-      <td>1.516339e-01</td>
-      <td>0.357427</td>
-      <td>4</td>
-      <td>6</td>
-    </tr>
-    <tr>
-      <th>1115</th>
-      <td>1.880663e-02</td>
-      <td>2.226060e-01</td>
-      <td>8.889224e-02</td>
-      <td>6.196426e-02</td>
-      <td>1.060972e-02</td>
-      <td>5.382521e-03</td>
-      <td>2.736638e-01</td>
-      <td>7.305532e-03</td>
-      <td>2.858033e-01</td>
-      <td>2.496605e-02</td>
-      <td>0.285803</td>
-      <td>8</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <th>1031</th>
-      <td>1.033852e-01</td>
-      <td>5.177050e-02</td>
-      <td>7.211524e-02</td>
-      <td>1.307259e-01</td>
-      <td>8.214290e-03</td>
-      <td>5.626875e-03</td>
-      <td>2.568235e-01</td>
-      <td>5.283331e-03</td>
-      <td>3.498454e-01</td>
-      <td>1.620973e-02</td>
-      <td>0.349845</td>
-      <td>8</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <th>1778</th>
-      <td>7.243351e-02</td>
-      <td>5.959544e-05</td>
-      <td>1.995622e-01</td>
-      <td>1.425000e-05</td>
-      <td>2.422987e-01</td>
-      <td>4.558027e-04</td>
-      <td>1.450675e-01</td>
-      <td>8.497129e-03</td>
-      <td>4.330557e-04</td>
-      <td>3.311783e-01</td>
-      <td>0.331178</td>
-      <td>9</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>2909</th>
-      <td>1.735541e-15</td>
-      <td>2.001958e-12</td>
-      <td>8.669379e-16</td>
-      <td>1.821178e-15</td>
-      <td>2.716592e-15</td>
-      <td>2.300831e-16</td>
-      <td>2.615356e-20</td>
-      <td>1.000000e+00</td>
-      <td>8.539057e-13</td>
-      <td>3.396687e-09</td>
-      <td>1.000000</td>
-      <td>7</td>
-      <td>7</td>
-    </tr>
-    <tr>
-      <th>2914</th>
-      <td>1.000000e+00</td>
-      <td>5.918221e-19</td>
-      <td>1.986233e-10</td>
-      <td>1.237661e-14</td>
-      <td>4.863426e-19</td>
-      <td>3.770102e-16</td>
-      <td>1.504733e-11</td>
-      <td>7.523226e-09</td>
-      <td>1.627343e-10</td>
-      <td>1.057123e-13</td>
-      <td>1.000000</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>2920</th>
-      <td>1.139901e-11</td>
-      <td>6.290391e-12</td>
-      <td>4.389559e-08</td>
-      <td>1.000000e+00</td>
-      <td>4.736745e-17</td>
-      <td>5.172185e-15</td>
-      <td>1.662083e-15</td>
-      <td>2.492923e-11</td>
-      <td>5.069354e-10</td>
-      <td>1.366577e-12</td>
-      <td>1.000000</td>
-      <td>3</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>2847</th>
-      <td>2.374335e-11</td>
-      <td>5.410563e-10</td>
-      <td>1.000000e+00</td>
-      <td>6.474658e-10</td>
-      <td>3.318972e-12</td>
-      <td>1.285993e-12</td>
-      <td>1.194038e-08</td>
-      <td>1.259493e-15</td>
-      <td>1.686373e-10</td>
-      <td>9.267352e-15</td>
-      <td>1.000000</td>
-      <td>2</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>4999</th>
-      <td>2.777072e-14</td>
-      <td>1.000000e+00</td>
-      <td>1.977435e-08</td>
-      <td>3.481474e-11</td>
-      <td>2.748897e-12</td>
-      <td>9.301366e-12</td>
-      <td>5.802548e-11</td>
-      <td>3.565957e-08</td>
-      <td>2.786610e-08</td>
-      <td>1.873916e-12</td>
-      <td>1.000000</td>
-      <td>1</td>
-      <td>1</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">0</th>
+<th data-quarto-table-cell-role="th">1</th>
+<th data-quarto-table-cell-role="th">2</th>
+<th data-quarto-table-cell-role="th">3</th>
+<th data-quarto-table-cell-role="th">4</th>
+<th data-quarto-table-cell-role="th">5</th>
+<th data-quarto-table-cell-role="th">6</th>
+<th data-quarto-table-cell-role="th">7</th>
+<th data-quarto-table-cell-role="th">8</th>
+<th data-quarto-table-cell-role="th">9</th>
+<th data-quarto-table-cell-role="th">Max</th>
+<th data-quarto-table-cell-role="th">Max_idx</th>
+<th data-quarto-table-cell-role="th">True_idx</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4792</td>
+<td>2.204627e-01</td>
+<td>1.263805e-02</td>
+<td>1.064651e-01</td>
+<td>2.497595e-02</td>
+<td>3.831481e-02</td>
+<td>1.915999e-02</td>
+<td>2.428759e-01</td>
+<td>4.884591e-02</td>
+<td>2.138946e-01</td>
+<td>7.236703e-02</td>
+<td>0.242876</td>
+<td>6</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3635</td>
+<td>3.720535e-03</td>
+<td>3.984575e-02</td>
+<td>6.415164e-02</td>
+<td>8.764555e-02</td>
+<td>3.574266e-01</td>
+<td>1.044143e-02</td>
+<td>2.420991e-02</td>
+<td>2.146130e-01</td>
+<td>4.631169e-02</td>
+<td>1.516339e-01</td>
+<td>0.357427</td>
+<td>4</td>
+<td>6</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1115</td>
+<td>1.880663e-02</td>
+<td>2.226060e-01</td>
+<td>8.889224e-02</td>
+<td>6.196426e-02</td>
+<td>1.060972e-02</td>
+<td>5.382521e-03</td>
+<td>2.736638e-01</td>
+<td>7.305532e-03</td>
+<td>2.858033e-01</td>
+<td>2.496605e-02</td>
+<td>0.285803</td>
+<td>8</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1031</td>
+<td>1.033852e-01</td>
+<td>5.177050e-02</td>
+<td>7.211524e-02</td>
+<td>1.307259e-01</td>
+<td>8.214290e-03</td>
+<td>5.626875e-03</td>
+<td>2.568235e-01</td>
+<td>5.283331e-03</td>
+<td>3.498454e-01</td>
+<td>1.620973e-02</td>
+<td>0.349845</td>
+<td>8</td>
+<td>5</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1778</td>
+<td>7.243351e-02</td>
+<td>5.959544e-05</td>
+<td>1.995622e-01</td>
+<td>1.425000e-05</td>
+<td>2.422987e-01</td>
+<td>4.558027e-04</td>
+<td>1.450675e-01</td>
+<td>8.497129e-03</td>
+<td>4.330557e-04</td>
+<td>3.311783e-01</td>
+<td>0.331178</td>
+<td>9</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2909</td>
+<td>1.735541e-15</td>
+<td>2.001958e-12</td>
+<td>8.669379e-16</td>
+<td>1.821178e-15</td>
+<td>2.716592e-15</td>
+<td>2.300831e-16</td>
+<td>2.615356e-20</td>
+<td>1.000000e+00</td>
+<td>8.539057e-13</td>
+<td>3.396687e-09</td>
+<td>1.000000</td>
+<td>7</td>
+<td>7</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">2914</td>
+<td>1.000000e+00</td>
+<td>5.918221e-19</td>
+<td>1.986233e-10</td>
+<td>1.237661e-14</td>
+<td>4.863426e-19</td>
+<td>3.770102e-16</td>
+<td>1.504733e-11</td>
+<td>7.523226e-09</td>
+<td>1.627343e-10</td>
+<td>1.057123e-13</td>
+<td>1.000000</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2920</td>
+<td>1.139901e-11</td>
+<td>6.290391e-12</td>
+<td>4.389559e-08</td>
+<td>1.000000e+00</td>
+<td>4.736745e-17</td>
+<td>5.172185e-15</td>
+<td>1.662083e-15</td>
+<td>2.492923e-11</td>
+<td>5.069354e-10</td>
+<td>1.366577e-12</td>
+<td>1.000000</td>
+<td>3</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">2847</td>
+<td>2.374335e-11</td>
+<td>5.410563e-10</td>
+<td>1.000000e+00</td>
+<td>6.474658e-10</td>
+<td>3.318972e-12</td>
+<td>1.285993e-12</td>
+<td>1.194038e-08</td>
+<td>1.259493e-15</td>
+<td>1.686373e-10</td>
+<td>9.267352e-15</td>
+<td>1.000000</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4999</td>
+<td>2.777072e-14</td>
+<td>1.000000e+00</td>
+<td>1.977435e-08</td>
+<td>3.481474e-11</td>
+<td>2.748897e-12</td>
+<td>9.301366e-12</td>
+<td>5.802548e-11</td>
+<td>3.565957e-08</td>
+<td>2.786610e-08</td>
+<td>1.873916e-12</td>
+<td>1.000000</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
 </table>
+
 <p>5000 rows × 13 columns</p>
 </div>
 </div>
@@ -1509,207 +1487,208 @@ Test set: Avg. loss: -0.8125, Accuracy: 4096/5000 (82%)
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>test_df_std <span class="op">=</span> test_df.loc[min_std_indices_test]</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>test_df_std</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="31">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>0</th>
-      <th>1</th>
-      <th>2</th>
-      <th>3</th>
-      <th>4</th>
-      <th>5</th>
-      <th>6</th>
-      <th>7</th>
-      <th>8</th>
-      <th>9</th>
-      <th>Max</th>
-      <th>Max_idx</th>
-      <th>True_idx</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1646</th>
-      <td>9.070086e-06</td>
-      <td>7.102170e-02</td>
-      <td>1.074573e-01</td>
-      <td>2.019677e-01</td>
-      <td>2.011996e-01</td>
-      <td>1.028181e-03</td>
-      <td>1.132987e-03</td>
-      <td>1.039726e-01</td>
-      <td>1.606203e-01</td>
-      <td>1.515905e-01</td>
-      <td>0.201968</td>
-      <td>3</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <th>1184</th>
-      <td>4.843292e-08</td>
-      <td>1.841913e-01</td>
-      <td>5.504493e-02</td>
-      <td>1.019774e-01</td>
-      <td>1.562013e-01</td>
-      <td>2.759257e-04</td>
-      <td>9.354739e-04</td>
-      <td>1.538243e-01</td>
-      <td>1.096576e-02</td>
-      <td>3.365835e-01</td>
-      <td>0.336583</td>
-      <td>9</td>
-      <td>7</td>
-    </tr>
-    <tr>
-      <th>3654</th>
-      <td>4.213768e-04</td>
-      <td>7.209036e-02</td>
-      <td>1.887893e-02</td>
-      <td>1.189776e-02</td>
-      <td>3.334404e-01</td>
-      <td>2.851049e-03</td>
-      <td>1.309165e-01</td>
-      <td>8.140079e-04</td>
-      <td>2.165484e-01</td>
-      <td>2.121412e-01</td>
-      <td>0.333440</td>
-      <td>4</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <th>3019</th>
-      <td>2.256842e-01</td>
-      <td>2.321515e-07</td>
-      <td>2.911193e-01</td>
-      <td>2.409384e-01</td>
-      <td>1.869016e-11</td>
-      <td>2.536230e-09</td>
-      <td>5.548395e-02</td>
-      <td>2.447040e-10</td>
-      <td>1.867739e-01</td>
-      <td>2.661302e-11</td>
-      <td>0.291119</td>
-      <td>2</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <th>4896</th>
-      <td>1.610583e-01</td>
-      <td>4.679085e-05</td>
-      <td>8.821968e-04</td>
-      <td>1.386619e-01</td>
-      <td>1.308930e-03</td>
-      <td>8.392150e-05</td>
-      <td>3.836229e-02</td>
-      <td>5.723350e-02</td>
-      <td>2.713310e-01</td>
-      <td>3.310311e-01</td>
-      <td>0.331031</td>
-      <td>9</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>3128</th>
-      <td>1.000000e+00</td>
-      <td>4.840718e-18</td>
-      <td>1.905646e-08</td>
-      <td>2.940498e-11</td>
-      <td>1.603996e-18</td>
-      <td>5.580763e-16</td>
-      <td>4.068423e-11</td>
-      <td>1.949603e-11</td>
-      <td>2.676126e-09</td>
-      <td>3.716259e-15</td>
-      <td>1.000000</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>4507</th>
-      <td>1.798757e-18</td>
-      <td>1.045387e-13</td>
-      <td>5.538239e-17</td>
-      <td>2.234547e-16</td>
-      <td>7.610493e-18</td>
-      <td>6.503045e-19</td>
-      <td>4.574509e-24</td>
-      <td>1.000000e+00</td>
-      <td>1.466630e-14</td>
-      <td>1.054316e-12</td>
-      <td>1.000000</td>
-      <td>7</td>
-      <td>7</td>
-    </tr>
-    <tr>
-      <th>3130</th>
-      <td>5.435448e-18</td>
-      <td>5.444775e-11</td>
-      <td>1.383103e-15</td>
-      <td>2.973889e-15</td>
-      <td>2.213195e-15</td>
-      <td>1.832753e-16</td>
-      <td>7.384352e-22</td>
-      <td>1.000000e+00</td>
-      <td>3.005146e-12</td>
-      <td>3.994342e-10</td>
-      <td>1.000000</td>
-      <td>7</td>
-      <td>7</td>
-    </tr>
-    <tr>
-      <th>3142</th>
-      <td>1.000000e+00</td>
-      <td>2.979347e-17</td>
-      <td>1.458575e-08</td>
-      <td>1.863164e-11</td>
-      <td>1.070295e-18</td>
-      <td>1.046285e-15</td>
-      <td>7.635514e-11</td>
-      <td>2.087787e-12</td>
-      <td>5.457018e-09</td>
-      <td>3.388109e-15</td>
-      <td>1.000000</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>3060</th>
-      <td>1.986817e-17</td>
-      <td>5.229983e-14</td>
-      <td>1.823637e-17</td>
-      <td>3.066719e-17</td>
-      <td>1.413327e-16</td>
-      <td>2.220211e-18</td>
-      <td>7.849721e-23</td>
-      <td>1.000000e+00</td>
-      <td>4.188006e-14</td>
-      <td>2.416875e-10</td>
-      <td>1.000000</td>
-      <td>7</td>
-      <td>7</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">0</th>
+<th data-quarto-table-cell-role="th">1</th>
+<th data-quarto-table-cell-role="th">2</th>
+<th data-quarto-table-cell-role="th">3</th>
+<th data-quarto-table-cell-role="th">4</th>
+<th data-quarto-table-cell-role="th">5</th>
+<th data-quarto-table-cell-role="th">6</th>
+<th data-quarto-table-cell-role="th">7</th>
+<th data-quarto-table-cell-role="th">8</th>
+<th data-quarto-table-cell-role="th">9</th>
+<th data-quarto-table-cell-role="th">Max</th>
+<th data-quarto-table-cell-role="th">Max_idx</th>
+<th data-quarto-table-cell-role="th">True_idx</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1646</td>
+<td>9.070086e-06</td>
+<td>7.102170e-02</td>
+<td>1.074573e-01</td>
+<td>2.019677e-01</td>
+<td>2.011996e-01</td>
+<td>1.028181e-03</td>
+<td>1.132987e-03</td>
+<td>1.039726e-01</td>
+<td>1.606203e-01</td>
+<td>1.515905e-01</td>
+<td>0.201968</td>
+<td>3</td>
+<td>8</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1184</td>
+<td>4.843292e-08</td>
+<td>1.841913e-01</td>
+<td>5.504493e-02</td>
+<td>1.019774e-01</td>
+<td>1.562013e-01</td>
+<td>2.759257e-04</td>
+<td>9.354739e-04</td>
+<td>1.538243e-01</td>
+<td>1.096576e-02</td>
+<td>3.365835e-01</td>
+<td>0.336583</td>
+<td>9</td>
+<td>7</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">3654</td>
+<td>4.213768e-04</td>
+<td>7.209036e-02</td>
+<td>1.887893e-02</td>
+<td>1.189776e-02</td>
+<td>3.334404e-01</td>
+<td>2.851049e-03</td>
+<td>1.309165e-01</td>
+<td>8.140079e-04</td>
+<td>2.165484e-01</td>
+<td>2.121412e-01</td>
+<td>0.333440</td>
+<td>4</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3019</td>
+<td>2.256842e-01</td>
+<td>2.321515e-07</td>
+<td>2.911193e-01</td>
+<td>2.409384e-01</td>
+<td>1.869016e-11</td>
+<td>2.536230e-09</td>
+<td>5.548395e-02</td>
+<td>2.447040e-10</td>
+<td>1.867739e-01</td>
+<td>2.661302e-11</td>
+<td>0.291119</td>
+<td>2</td>
+<td>5</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4896</td>
+<td>1.610583e-01</td>
+<td>4.679085e-05</td>
+<td>8.821968e-04</td>
+<td>1.386619e-01</td>
+<td>1.308930e-03</td>
+<td>8.392150e-05</td>
+<td>3.836229e-02</td>
+<td>5.723350e-02</td>
+<td>2.713310e-01</td>
+<td>3.310311e-01</td>
+<td>0.331031</td>
+<td>9</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">3128</td>
+<td>1.000000e+00</td>
+<td>4.840718e-18</td>
+<td>1.905646e-08</td>
+<td>2.940498e-11</td>
+<td>1.603996e-18</td>
+<td>5.580763e-16</td>
+<td>4.068423e-11</td>
+<td>1.949603e-11</td>
+<td>2.676126e-09</td>
+<td>3.716259e-15</td>
+<td>1.000000</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">4507</td>
+<td>1.798757e-18</td>
+<td>1.045387e-13</td>
+<td>5.538239e-17</td>
+<td>2.234547e-16</td>
+<td>7.610493e-18</td>
+<td>6.503045e-19</td>
+<td>4.574509e-24</td>
+<td>1.000000e+00</td>
+<td>1.466630e-14</td>
+<td>1.054316e-12</td>
+<td>1.000000</td>
+<td>7</td>
+<td>7</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">3130</td>
+<td>5.435448e-18</td>
+<td>5.444775e-11</td>
+<td>1.383103e-15</td>
+<td>2.973889e-15</td>
+<td>2.213195e-15</td>
+<td>1.832753e-16</td>
+<td>7.384352e-22</td>
+<td>1.000000e+00</td>
+<td>3.005146e-12</td>
+<td>3.994342e-10</td>
+<td>1.000000</td>
+<td>7</td>
+<td>7</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3142</td>
+<td>1.000000e+00</td>
+<td>2.979347e-17</td>
+<td>1.458575e-08</td>
+<td>1.863164e-11</td>
+<td>1.070295e-18</td>
+<td>1.046285e-15</td>
+<td>7.635514e-11</td>
+<td>2.087787e-12</td>
+<td>5.457018e-09</td>
+<td>3.388109e-15</td>
+<td>1.000000</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">3060</td>
+<td>1.986817e-17</td>
+<td>5.229983e-14</td>
+<td>1.823637e-17</td>
+<td>3.066719e-17</td>
+<td>1.413327e-16</td>
+<td>2.220211e-18</td>
+<td>7.849721e-23</td>
+<td>1.000000e+00</td>
+<td>4.188006e-14</td>
+<td>2.416875e-10</td>
+<td>1.000000</td>
+<td>7</td>
+<td>7</td>
+</tr>
+</tbody>
 </table>
+
 <p>5000 rows × 13 columns</p>
 </div>
 </div>
@@ -1889,303 +1868,304 @@ Test set: Avg. loss: -0.8125, Accuracy: 4096/5000 (82%)
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>imagenet_calib_df <span class="op">=</span> pd.DataFrame(cal_smx)</span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>imagenet_calib_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="41">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>0</th>
-      <th>1</th>
-      <th>2</th>
-      <th>3</th>
-      <th>4</th>
-      <th>5</th>
-      <th>6</th>
-      <th>7</th>
-      <th>8</th>
-      <th>9</th>
-      <th>...</th>
-      <th>990</th>
-      <th>991</th>
-      <th>992</th>
-      <th>993</th>
-      <th>994</th>
-      <th>995</th>
-      <th>996</th>
-      <th>997</th>
-      <th>998</th>
-      <th>999</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>9.646587e-01</td>
-      <td>1.350361e-05</td>
-      <td>2.151330e-07</td>
-      <td>1.699551e-06</td>
-      <td>2.384544e-06</td>
-      <td>1.646308e-06</td>
-      <td>1.394906e-07</td>
-      <td>2.117511e-08</td>
-      <td>3.057390e-09</td>
-      <td>4.086660e-10</td>
-      <td>...</td>
-      <td>5.279725e-09</td>
-      <td>9.462966e-08</td>
-      <td>1.185813e-08</td>
-      <td>5.307772e-10</td>
-      <td>2.161666e-07</td>
-      <td>1.007043e-08</td>
-      <td>9.514928e-08</td>
-      <td>8.144019e-07</td>
-      <td>1.339111e-07</td>
-      <td>6.878381e-09</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>9.992527e-01</td>
-      <td>1.005275e-06</td>
-      <td>5.030975e-08</td>
-      <td>2.312540e-08</td>
-      <td>6.919812e-07</td>
-      <td>5.068674e-08</td>
-      <td>5.945228e-08</td>
-      <td>2.580266e-09</td>
-      <td>1.059923e-09</td>
-      <td>5.929557e-11</td>
-      <td>...</td>
-      <td>3.178681e-10</td>
-      <td>3.120479e-09</td>
-      <td>2.160190e-09</td>
-      <td>6.229624e-10</td>
-      <td>3.004631e-08</td>
-      <td>2.982520e-10</td>
-      <td>3.827619e-08</td>
-      <td>2.310420e-07</td>
-      <td>9.114003e-08</td>
-      <td>6.513726e-10</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>9.998410e-01</td>
-      <td>2.081634e-08</td>
-      <td>2.163244e-09</td>
-      <td>1.033369e-08</td>
-      <td>9.947884e-09</td>
-      <td>4.689700e-09</td>
-      <td>4.500399e-09</td>
-      <td>4.603104e-11</td>
-      <td>2.665861e-11</td>
-      <td>4.032333e-12</td>
-      <td>...</td>
-      <td>1.170430e-10</td>
-      <td>1.740400e-10</td>
-      <td>1.001514e-10</td>
-      <td>2.484425e-11</td>
-      <td>6.860166e-10</td>
-      <td>5.098253e-11</td>
-      <td>9.393597e-10</td>
-      <td>3.404014e-08</td>
-      <td>1.460277e-09</td>
-      <td>8.657306e-13</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>9.996231e-01</td>
-      <td>6.980400e-06</td>
-      <td>7.547856e-08</td>
-      <td>1.445374e-07</td>
-      <td>5.570853e-07</td>
-      <td>1.413495e-06</td>
-      <td>1.172659e-07</td>
-      <td>4.219434e-09</td>
-      <td>9.644072e-10</td>
-      <td>4.150972e-11</td>
-      <td>...</td>
-      <td>1.467458e-09</td>
-      <td>1.727905e-08</td>
-      <td>4.188708e-08</td>
-      <td>8.764998e-10</td>
-      <td>3.017675e-08</td>
-      <td>1.152834e-09</td>
-      <td>2.212167e-08</td>
-      <td>5.312061e-07</td>
-      <td>7.742039e-09</td>
-      <td>6.035842e-10</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>3.740840e-07</td>
-      <td>9.997242e-01</td>
-      <td>6.791072e-10</td>
-      <td>4.707819e-09</td>
-      <td>3.942747e-09</td>
-      <td>3.235905e-07</td>
-      <td>1.922253e-08</td>
-      <td>7.563041e-09</td>
-      <td>4.848560e-09</td>
-      <td>1.836324e-11</td>
-      <td>...</td>
-      <td>1.428742e-09</td>
-      <td>2.168828e-09</td>
-      <td>7.591582e-10</td>
-      <td>7.432400e-11</td>
-      <td>8.145293e-10</td>
-      <td>6.436701e-10</td>
-      <td>6.601004e-10</td>
-      <td>2.608228e-10</td>
-      <td>1.372821e-09</td>
-      <td>1.686885e-07</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>995</th>
-      <td>1.338609e-13</td>
-      <td>2.481204e-13</td>
-      <td>2.981873e-12</td>
-      <td>2.992094e-12</td>
-      <td>8.025680e-13</td>
-      <td>1.196738e-12</td>
-      <td>1.058158e-12</td>
-      <td>1.031028e-14</td>
-      <td>8.366420e-14</td>
-      <td>1.834110e-16</td>
-      <td>...</td>
-      <td>2.835526e-10</td>
-      <td>1.185883e-09</td>
-      <td>5.707088e-11</td>
-      <td>1.053065e-10</td>
-      <td>6.115803e-09</td>
-      <td>1.000000e+00</td>
-      <td>6.104551e-11</td>
-      <td>3.662891e-10</td>
-      <td>2.519912e-13</td>
-      <td>1.617798e-11</td>
-    </tr>
-    <tr>
-      <th>996</th>
-      <td>1.461727e-05</td>
-      <td>2.962031e-05</td>
-      <td>2.201413e-07</td>
-      <td>3.813796e-08</td>
-      <td>1.196295e-07</td>
-      <td>3.246882e-07</td>
-      <td>2.723306e-06</td>
-      <td>2.824044e-06</td>
-      <td>9.639041e-06</td>
-      <td>2.289236e-05</td>
-      <td>...</td>
-      <td>2.566843e-02</td>
-      <td>1.156482e-01</td>
-      <td>1.163806e-03</td>
-      <td>6.741311e-03</td>
-      <td>1.174134e-03</td>
-      <td>1.015575e-03</td>
-      <td>4.271199e-01</td>
-      <td>3.027194e-01</td>
-      <td>3.415058e-04</td>
-      <td>8.422194e-07</td>
-    </tr>
-    <tr>
-      <th>997</th>
-      <td>3.484188e-06</td>
-      <td>1.047919e-07</td>
-      <td>7.475886e-08</td>
-      <td>3.465406e-07</td>
-      <td>1.347377e-06</td>
-      <td>4.767327e-06</td>
-      <td>4.182576e-08</td>
-      <td>4.709841e-08</td>
-      <td>1.508235e-08</td>
-      <td>1.065061e-08</td>
-      <td>...</td>
-      <td>2.632773e-06</td>
-      <td>2.174731e-05</td>
-      <td>3.774206e-04</td>
-      <td>1.449335e-04</td>
-      <td>8.616778e-01</td>
-      <td>8.140442e-05</td>
-      <td>1.180090e-04</td>
-      <td>1.335993e-01</td>
-      <td>7.427732e-06</td>
-      <td>3.561391e-08</td>
-    </tr>
-    <tr>
-      <th>998</th>
-      <td>7.082336e-04</td>
-      <td>2.196637e-05</td>
-      <td>1.516250e-05</td>
-      <td>7.714512e-04</td>
-      <td>1.190577e-01</td>
-      <td>5.289520e-02</td>
-      <td>3.330159e-04</td>
-      <td>1.690781e-07</td>
-      <td>1.402206e-06</td>
-      <td>4.881958e-08</td>
-      <td>...</td>
-      <td>1.218608e-05</td>
-      <td>2.880947e-03</td>
-      <td>5.116140e-04</td>
-      <td>1.090989e-01</td>
-      <td>8.638866e-03</td>
-      <td>3.532250e-02</td>
-      <td>1.301925e-02</td>
-      <td>5.380661e-01</td>
-      <td>1.777594e-05</td>
-      <td>4.036425e-07</td>
-    </tr>
-    <tr>
-      <th>999</th>
-      <td>4.129702e-14</td>
-      <td>2.889617e-12</td>
-      <td>2.798768e-13</td>
-      <td>4.931771e-13</td>
-      <td>2.598153e-12</td>
-      <td>9.916586e-14</td>
-      <td>3.006582e-13</td>
-      <td>8.608723e-12</td>
-      <td>2.060572e-12</td>
-      <td>5.938183e-13</td>
-      <td>...</td>
-      <td>1.010096e-11</td>
-      <td>1.221625e-11</td>
-      <td>2.120370e-11</td>
-      <td>2.549839e-13</td>
-      <td>5.645862e-10</td>
-      <td>5.007978e-11</td>
-      <td>3.019627e-10</td>
-      <td>1.544346e-11</td>
-      <td>1.280130e-11</td>
-      <td>9.915479e-01</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">0</th>
+<th data-quarto-table-cell-role="th">1</th>
+<th data-quarto-table-cell-role="th">2</th>
+<th data-quarto-table-cell-role="th">3</th>
+<th data-quarto-table-cell-role="th">4</th>
+<th data-quarto-table-cell-role="th">5</th>
+<th data-quarto-table-cell-role="th">6</th>
+<th data-quarto-table-cell-role="th">7</th>
+<th data-quarto-table-cell-role="th">8</th>
+<th data-quarto-table-cell-role="th">9</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">990</th>
+<th data-quarto-table-cell-role="th">991</th>
+<th data-quarto-table-cell-role="th">992</th>
+<th data-quarto-table-cell-role="th">993</th>
+<th data-quarto-table-cell-role="th">994</th>
+<th data-quarto-table-cell-role="th">995</th>
+<th data-quarto-table-cell-role="th">996</th>
+<th data-quarto-table-cell-role="th">997</th>
+<th data-quarto-table-cell-role="th">998</th>
+<th data-quarto-table-cell-role="th">999</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>9.646587e-01</td>
+<td>1.350361e-05</td>
+<td>2.151330e-07</td>
+<td>1.699551e-06</td>
+<td>2.384544e-06</td>
+<td>1.646308e-06</td>
+<td>1.394906e-07</td>
+<td>2.117511e-08</td>
+<td>3.057390e-09</td>
+<td>4.086660e-10</td>
+<td>...</td>
+<td>5.279725e-09</td>
+<td>9.462966e-08</td>
+<td>1.185813e-08</td>
+<td>5.307772e-10</td>
+<td>2.161666e-07</td>
+<td>1.007043e-08</td>
+<td>9.514928e-08</td>
+<td>8.144019e-07</td>
+<td>1.339111e-07</td>
+<td>6.878381e-09</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>9.992527e-01</td>
+<td>1.005275e-06</td>
+<td>5.030975e-08</td>
+<td>2.312540e-08</td>
+<td>6.919812e-07</td>
+<td>5.068674e-08</td>
+<td>5.945228e-08</td>
+<td>2.580266e-09</td>
+<td>1.059923e-09</td>
+<td>5.929557e-11</td>
+<td>...</td>
+<td>3.178681e-10</td>
+<td>3.120479e-09</td>
+<td>2.160190e-09</td>
+<td>6.229624e-10</td>
+<td>3.004631e-08</td>
+<td>2.982520e-10</td>
+<td>3.827619e-08</td>
+<td>2.310420e-07</td>
+<td>9.114003e-08</td>
+<td>6.513726e-10</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>9.998410e-01</td>
+<td>2.081634e-08</td>
+<td>2.163244e-09</td>
+<td>1.033369e-08</td>
+<td>9.947884e-09</td>
+<td>4.689700e-09</td>
+<td>4.500399e-09</td>
+<td>4.603104e-11</td>
+<td>2.665861e-11</td>
+<td>4.032333e-12</td>
+<td>...</td>
+<td>1.170430e-10</td>
+<td>1.740400e-10</td>
+<td>1.001514e-10</td>
+<td>2.484425e-11</td>
+<td>6.860166e-10</td>
+<td>5.098253e-11</td>
+<td>9.393597e-10</td>
+<td>3.404014e-08</td>
+<td>1.460277e-09</td>
+<td>8.657306e-13</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>9.996231e-01</td>
+<td>6.980400e-06</td>
+<td>7.547856e-08</td>
+<td>1.445374e-07</td>
+<td>5.570853e-07</td>
+<td>1.413495e-06</td>
+<td>1.172659e-07</td>
+<td>4.219434e-09</td>
+<td>9.644072e-10</td>
+<td>4.150972e-11</td>
+<td>...</td>
+<td>1.467458e-09</td>
+<td>1.727905e-08</td>
+<td>4.188708e-08</td>
+<td>8.764998e-10</td>
+<td>3.017675e-08</td>
+<td>1.152834e-09</td>
+<td>2.212167e-08</td>
+<td>5.312061e-07</td>
+<td>7.742039e-09</td>
+<td>6.035842e-10</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>3.740840e-07</td>
+<td>9.997242e-01</td>
+<td>6.791072e-10</td>
+<td>4.707819e-09</td>
+<td>3.942747e-09</td>
+<td>3.235905e-07</td>
+<td>1.922253e-08</td>
+<td>7.563041e-09</td>
+<td>4.848560e-09</td>
+<td>1.836324e-11</td>
+<td>...</td>
+<td>1.428742e-09</td>
+<td>2.168828e-09</td>
+<td>7.591582e-10</td>
+<td>7.432400e-11</td>
+<td>8.145293e-10</td>
+<td>6.436701e-10</td>
+<td>6.601004e-10</td>
+<td>2.608228e-10</td>
+<td>1.372821e-09</td>
+<td>1.686885e-07</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">995</td>
+<td>1.338609e-13</td>
+<td>2.481204e-13</td>
+<td>2.981873e-12</td>
+<td>2.992094e-12</td>
+<td>8.025680e-13</td>
+<td>1.196738e-12</td>
+<td>1.058158e-12</td>
+<td>1.031028e-14</td>
+<td>8.366420e-14</td>
+<td>1.834110e-16</td>
+<td>...</td>
+<td>2.835526e-10</td>
+<td>1.185883e-09</td>
+<td>5.707088e-11</td>
+<td>1.053065e-10</td>
+<td>6.115803e-09</td>
+<td>1.000000e+00</td>
+<td>6.104551e-11</td>
+<td>3.662891e-10</td>
+<td>2.519912e-13</td>
+<td>1.617798e-11</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">996</td>
+<td>1.461727e-05</td>
+<td>2.962031e-05</td>
+<td>2.201413e-07</td>
+<td>3.813796e-08</td>
+<td>1.196295e-07</td>
+<td>3.246882e-07</td>
+<td>2.723306e-06</td>
+<td>2.824044e-06</td>
+<td>9.639041e-06</td>
+<td>2.289236e-05</td>
+<td>...</td>
+<td>2.566843e-02</td>
+<td>1.156482e-01</td>
+<td>1.163806e-03</td>
+<td>6.741311e-03</td>
+<td>1.174134e-03</td>
+<td>1.015575e-03</td>
+<td>4.271199e-01</td>
+<td>3.027194e-01</td>
+<td>3.415058e-04</td>
+<td>8.422194e-07</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">997</td>
+<td>3.484188e-06</td>
+<td>1.047919e-07</td>
+<td>7.475886e-08</td>
+<td>3.465406e-07</td>
+<td>1.347377e-06</td>
+<td>4.767327e-06</td>
+<td>4.182576e-08</td>
+<td>4.709841e-08</td>
+<td>1.508235e-08</td>
+<td>1.065061e-08</td>
+<td>...</td>
+<td>2.632773e-06</td>
+<td>2.174731e-05</td>
+<td>3.774206e-04</td>
+<td>1.449335e-04</td>
+<td>8.616778e-01</td>
+<td>8.140442e-05</td>
+<td>1.180090e-04</td>
+<td>1.335993e-01</td>
+<td>7.427732e-06</td>
+<td>3.561391e-08</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">998</td>
+<td>7.082336e-04</td>
+<td>2.196637e-05</td>
+<td>1.516250e-05</td>
+<td>7.714512e-04</td>
+<td>1.190577e-01</td>
+<td>5.289520e-02</td>
+<td>3.330159e-04</td>
+<td>1.690781e-07</td>
+<td>1.402206e-06</td>
+<td>4.881958e-08</td>
+<td>...</td>
+<td>1.218608e-05</td>
+<td>2.880947e-03</td>
+<td>5.116140e-04</td>
+<td>1.090989e-01</td>
+<td>8.638866e-03</td>
+<td>3.532250e-02</td>
+<td>1.301925e-02</td>
+<td>5.380661e-01</td>
+<td>1.777594e-05</td>
+<td>4.036425e-07</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">999</td>
+<td>4.129702e-14</td>
+<td>2.889617e-12</td>
+<td>2.798768e-13</td>
+<td>4.931771e-13</td>
+<td>2.598153e-12</td>
+<td>9.916586e-14</td>
+<td>3.006582e-13</td>
+<td>8.608723e-12</td>
+<td>2.060572e-12</td>
+<td>5.938183e-13</td>
+<td>...</td>
+<td>1.010096e-11</td>
+<td>1.221625e-11</td>
+<td>2.120370e-11</td>
+<td>2.549839e-13</td>
+<td>5.645862e-10</td>
+<td>5.007978e-11</td>
+<td>3.019627e-10</td>
+<td>1.544346e-11</td>
+<td>1.280130e-11</td>
+<td>9.915479e-01</td>
+</tr>
+</tbody>
 </table>
+
 <p>1000 rows × 1000 columns</p>
 </div>
 </div>
@@ -2341,61 +2321,43 @@ Test set: Avg. loss: -0.8125, Accuracy: 4096/5000 (82%)
 <p><img src="2023-04-25-cp_files/figure-html/cell-51-output-1.png" class="img-fluid"></p>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>The prediction set is: ['prairie grouse', 'partridge', 'Afghan Hound', 'Otterhound', 'Bedlington Terrier', 'Kerry Blue Terrier', 'Giant Schnauzer', 'Flat-Coated Retriever', 'Curly-coated Retriever', 'Chesapeake Bay Retriever', 'German Shorthaired Pointer', 'Vizsla', 'Irish Setter', 'Gordon Setter', 'Brittany', 'Clumber Spaniel', 'English Springer Spaniel', 'Welsh Springer Spaniel', 'Cocker Spaniels', 'Sussex Spaniel', 'Irish Water Spaniel', 'Australian Kelpie', 'Komondor', 'Newfoundland', 'Toy Poodle', 'Miniature Poodle', 'Standard Poodle', 'hyena', 'leopard', 'cheetah', 'brown bear', 'American black bear', 'mongoose', 'wild boar', 'bison', 'ram', 'llama', 'weasel', 'mink', 'guenon', 'baboon', 'honeycomb', 'jeep', 'wig', 'acorn', 'gyromitra']</code></pre>
+<pre><code>The prediction set is: ['prairie grouse', 'partridge', 'Afghan Hound', 'Otterhound', 'Bedlington Terrier', 'Kerry Blue Terrier', 'Giant Schnauzer', 'Flat-Coated Retriever', 'Curly-coated Retriever', 'Chesapeake Bay Retriever', 'German Shorthaired Pointer', 'Vizsla', 'Irish Setter', 'Gordon Setter', 'Brittany', 'Clumber Spaniel', 'English Springer Spaniel', 'Welsh Springer Spaniel', 'Cocker Spaniels', 'Sussex Spaniel', 'Irish Water Spaniel', 'Australian Kelpie', 'Komondor', 'Newfoundland', 'Toy Poodle', 'Miniature Poodle', 'Standard Poodle', 'hyena', 'leopard', 'cheetah', 'brown bear', 'American black bear', 'mongoose', 'wild boar', 'bison', 'ram', 'llama', 'weasel', 'mink', 'guenon', 'baboon', 'honeycomb', 'jeep', 'wig', 'acorn', 'gyromitra']
+The prediction set is: ['Otterhound', 'Border Terrier', 'Norfolk Terrier', 'Norwich Terrier', 'Yorkshire Terrier', 'Wire Fox Terrier', 'Lakeland Terrier', 'Airedale Terrier', 'Cairn Terrier', 'Australian Terrier', 'Dandie Dinmont Terrier', 'Miniature Schnauzer', 'Standard Schnauzer', 'Scottish Terrier', 'Australian Silky Terrier', 'German Shepherd Dog']
+The prediction set is: ['goldfish', 'tiger shark', 'cock', 'house finch', 'agama', 'triceratops', 'ring-necked snake', 'sea snake', 'southern black widow', 'centipede', 'black grouse', 'prairie grouse', 'grey parrot', 'macaw', 'lorikeet', 'hornbill', 'hummingbird', 'toucan', 'flatworm', 'nematode', 'sea slug', 'fiddler crab', 'American lobster', 'spiny lobster', 'crayfish', 'hermit crab', 'isopod', 'crane (bird)', 'oystercatcher', 'Bloodhound', 'Miniature Schnauzer', 'Giant Schnauzer', 'Standard Schnauzer', 'Labrador Retriever', 'English Setter', 'Gordon Setter', 'Brittany', 'Cocker Spaniels', 'Sussex Spaniel', 'Rottweiler', 'Greater Swiss Mountain Dog', 'Dalmatian', 'cougar', 'tiger', 'polar bear', 'mongoose', 'ladybug', 'stick insect', 'cockroach', 'leafhopper', 'damselfly', 'red admiral', 'gossamer-winged butterfly', 'sea cucumber', 'hamster', 'beaver', 'guinea pig', 'pig', 'weasel', 'mink', 'European polecat', 'black-footed ferret', 'skunk', 'badger', 'macaque', 'marmoset', 'red panda', 'eel', 'coho salmon', 'rock beauty', 'clownfish', 'sturgeon', 'garfish', 'lionfish', 'aircraft carrier', 'airliner', 'airship', 'ambulance', 'amphibious vehicle', 'analog clock', 'apiary', 'waste container', 'assault rifle', 'backpack', 'balance beam', 'balloon', 'Band-Aid', 'baluster', 'barber chair', 'barbershop', 'barometer', 'barrel', 'wheelbarrow', 'baseball', 'swimming cap', 'bathtub', 'station wagon', 'lighthouse', 'beaker', 'beer bottle', 'binoculars', 'birdhouse', 'boathouse', 'bolo tie', 'bottle cap', 'breakwater', 'broom', 'buckle', 'bulletproof vest', 'high-speed train', 'taxicab', 'cannon', 'canoe', 'can opener', 'car mirror', 'carousel', 'tool kit', 'car wheel', 'automated teller machine', 'cassette', 'cassette player', 'catamaran', 'CD player', 'mobile phone', 'chain', 'chain-link fence', 'chainsaw', 'movie theater', 'coffeemaker', 'computer keyboard', 'container ship', 'convertible', 'cowboy hat', 'crane (machine)', 'crash helmet', 'crate', 'crutch', 'dam', 'desk', 'desktop computer', 'rotary dial telephone', 'digital clock', 'digital watch', 'dishwasher', 'disc brake', 'dock', 'dog sled', 'drilling rig', 'dumbbell', 'Dutch oven', 'electric fan', 'electric locomotive', 'envelope', 'feather boa', 'fireboat', 'fire engine', 'football helmet', 'forklift', 'freight car', 'frying pan', 'garbage truck', 'gas mask', 'gas pump', 'go-kart', 'golf ball', 'golf cart', 'grille', 'grocery store', 'guillotine', 'barrette', 'half-track', 'hammer', 'hand-held computer', 'hard disk drive', 'harvester', 'hatchet', 'holster', 'honeycomb', 'hook', 'horizontal bar', 'horse-drawn vehicle', "jack-o'-lantern", 'jeep', 'jigsaw puzzle', 'pulled rickshaw', 'joystick', 'knot', 'lab coat', 'ladle', 'laptop computer', 'lawn mower', 'lifeboat', 'lighter', 'limousine', 'ocean liner', 'speaker', 'sawmill', 'magnetic compass', 'mailbox', 'manhole cover', 'match', 'maze', 'medicine chest', 'microwave oven', 'military uniform', 'milk can', 'minibus', 'minivan', 'missile', 'mobile home', 'Model T', 'modem', 'monitor', 'moped', 'mortar', 'scooter', 'mountain bike', 'tent', 'computer mouse', 'mousetrap', 'moving van', 'neck brace', 'odometer', 'oil filter', 'oscilloscope', 'bullock cart', 'oxygen mask', 'packet', 'paddle wheel', 'padlock', 'paintbrush', 'parachute', 'parking meter', 'passenger car', 'payphone', 'pencil case', 'pencil sharpener', 'Petri dish', 'photocopier', 'picket fence', 'pickup truck', 'pier', 'pill bottle', 'ping-pong ball', 'hand plane', 'plow', 'plunger', 'Polaroid camera', 'pole', 'police van', 'soda bottle', 'power drill', 'printer', 'projectile', 'projector', 'hockey puck', 'punching bag', 'race car', 'radiator', 'radio', 'radio telescope', 'rain barrel', 'recreational vehicle', 'reflex camera', 'refrigerator', 'remote control', 'restaurant', 'revolver', 'rifle', 'rotisserie', 'eraser', 'ruler', 'running shoe', 'safe', 'sandal', 'weighing scale', 'school bus', 'scoreboard', 'CRT screen', 'screw', 'screwdriver', 'seat belt', 'sewing machine', 'shopping cart', 'shovel', 'ski', 'sleeping bag', 'slide rule', 'sliding door', 'slot machine', 'snorkel', 'snowmobile', 'snowplow', 'solar thermal collector', 'space bar', 'space heater', 'space shuttle', 'motorboat', 'sports car', 'spotlight', 'steam locomotive', 'through arch bridge', 'stopwatch', 'stove', 'strainer', 'tram', 'stretcher', 'suspension bridge', 'mop', 'swing', 'switch', 'syringe', 'tank', 'tape player', 'television', 'threshing machine', 'tile roof', 'toaster', 'toilet seat', 'torch', 'totem pole', 'tow truck', 'toy store', 'tractor', 'semi-trailer truck', 'tray', 'trimaran', 'trolleybus', 'tub', 'turnstile', 'typewriter keyboard', 'viaduct', 'wall clock', 'military aircraft', 'sink', 'washing machine', 'water bottle', 'water tower', 'whistle', 'wing', 'shipwreck', 'yurt', 'website', 'traffic sign', 'traffic light', 'dust jacket', 'ice pop', 'hot dog', 'spaghetti squash', 'acorn squash', 'butternut squash', 'cucumber', 'hay', 'meatloaf', 'burrito', 'alp', 'bubble', 'cliff', 'coral reef', 'volcano', 'baseball player', 'scuba diver', 'rapeseed', 'corn', 'coral fungus', 'agaric', 'stinkhorn mushroom', 'ear']
+The prediction set is: ['alligator lizard', 'trilobite', 'scorpion', 'tick', 'centipede', 'conch', 'snail', 'chiton', 'crayfish', 'hermit crab', 'isopod', 'ground beetle', 'weevil', 'cockroach', 'cicada', 'sea cucumber', 'armadillo', 'corn']
+The prediction set is: ['tench', 'great white shark', 'tiger shark', 'hammerhead shark', 'electric ray', 'stingray', 'cock', 'hen', 'house finch', 'junco', 'indigo bunting', 'vulture', 'spotted salamander', 'loggerhead sea turtle', 'leatherback sea turtle', 'green iguana', 'desert grassland whiptail lizard', 'frilled-necked lizard', 'Gila monster', 'European green lizard', 'triceratops', 'eastern hog-nosed snake', 'kingsnake', 'vine snake', 'night snake', 'boa constrictor', 'harvestman', 'scorpion', 'yellow garden spider', 'barn spider', 'European garden spider', 'southern black widow', 'tarantula', 'tick', 'centipede', 'black grouse', 'ruffed grouse', 'prairie grouse', 'partridge', 'grey parrot', 'macaw', 'sulphur-crested cockatoo', 'coucal', 'hornbill', 'toucan', 'tusker', 'echidna', 'wombat', 'jellyfish', 'sea anemone', 'flatworm', 'conch', 'slug', 'chambered nautilus', 'Dungeness crab', 'rock crab', 'red king crab', 'American lobster', 'spiny lobster', 'crayfish', 'hermit crab', 'isopod', 'American coot', 'dunlin', 'king penguin', 'albatross', 'grey whale', 'killer whale', 'dugong', 'sea lion', 'Chihuahua', 'Japanese Chin', 'Maltese', 'Pekingese', 'Shih Tzu', 'King Charles Spaniel', 'toy terrier', 'Rhodesian Ridgeback', 'Afghan Hound', 'Basset Hound', 'Beagle', 'Bloodhound', 'Bluetick Coonhound', 'Black and Tan Coonhound', 'Treeing Walker Coonhound', 'English foxhound', 'Redbone Coonhound', 'borzoi', 'Italian Greyhound', 'Weimaraner', 'Staffordshire Bull Terrier', 'American Staffordshire Terrier', 'Bedlington Terrier', 'Kerry Blue Terrier', 'Irish Terrier', 'Norfolk Terrier', 'Norwich Terrier', 'Yorkshire Terrier', 'Lakeland Terrier', 'Sealyham Terrier', 'Cairn Terrier', 'Australian Terrier', 'Dandie Dinmont Terrier', 'Boston Terrier', 'Miniature Schnauzer', 'Giant Schnauzer', 'Scottish Terrier', 'Tibetan Terrier', 'Australian Silky Terrier', 'Soft-coated Wheaten Terrier', 'West Highland White Terrier', 'Lhasa Apso', 'Flat-Coated Retriever', 'Curly-coated Retriever', 'Golden Retriever', 'Labrador Retriever', 'Chesapeake Bay Retriever', 'German Shorthaired Pointer', 'Vizsla', 'Gordon Setter', 'Brittany', 'Clumber Spaniel', 'English Springer Spaniel', 'Cocker Spaniels', 'Sussex Spaniel', 'Irish Water Spaniel', 'Kuvasz', 'Schipperke', 'Groenendael', 'Briard', 'Australian Kelpie', 'Komondor', 'Old English Sheepdog', 'Bouvier des Flandres', 'Rottweiler', 'German Shepherd Dog', 'Dobermann', 'Miniature Pinscher', 'Greater Swiss Mountain Dog', 'Bernese Mountain Dog', 'Appenzeller Sennenhund', 'Entlebucher Sennenhund', 'Boxer', 'Bullmastiff', 'Tibetan Mastiff', 'French Bulldog', 'Great Dane', 'husky', 'Alaskan Malamute', 'Siberian Husky', 'Dalmatian', 'Affenpinscher', 'Basenji', 'pug', 'Leonberger', 'Newfoundland', 'Pyrenean Mountain Dog', 'Samoyed', 'Pomeranian', 'Chow Chow', 'Griffon Bruxellois', 'Pembroke Welsh Corgi', 'Toy Poodle', 'Miniature Poodle', 'Standard Poodle', 'Mexican hairless dog', 'Alaskan tundra wolf', 'tabby cat', 'tiger cat', 'Persian cat', 'Siamese cat', 'Egyptian Mau', 'leopard', 'American black bear', 'ground beetle', 'rhinoceros beetle', 'grasshopper', 'cricket', 'stick insect', 'cockroach', 'mantis', 'ringlet', 'monarch butterfly', 'starfish', 'sea urchin', 'cottontail rabbit', 'Angora rabbit', 'hamster', 'porcupine', 'beaver', 'common sorrel', 'zebra', 'hippopotamus', 'ox', 'water buffalo', 'weasel', 'mink', 'European polecat', 'black-footed ferret', 'armadillo', 'gibbon', 'Asian elephant', 'African bush elephant', 'snoek', 'eel', 'coho salmon', 'rock beauty', 'sturgeon', 'garfish', 'lionfish', 'abacus', 'abaya', 'academic gown', 'accordion', 'acoustic guitar', 'aircraft carrier', 'airship', 'altar', 'ambulance', 'analog clock', 'apron', 'waste container', 'assault rifle', 'backpack', 'bakery', 'balloon', 'Band-Aid', 'banjo', 'baluster', 'barbell', 'barber chair', 'barbershop', 'barometer', 'barrel', 'baseball', 'basketball', 'bassinet', 'bassoon', 'swimming cap', 'bath towel', 'bathtub', 'station wagon', 'lighthouse', 'beaker', 'military cap', 'beer bottle', 'beer glass', 'bell-cot', 'bib', 'tandem bicycle', 'bikini', 'ring binder', 'binoculars', 'bobsleigh', 'bolo tie', 'poke bonnet', 'bookcase', 'bookstore', 'bow', 'bow tie', 'brass', 'bra', 'breastplate', 'broom', 'bucket', 'buckle', 'bulletproof vest', 'high-speed train', 'butcher shop', 'taxicab', 'cauldron', 'candle', 'cannon', 'can opener', 'cardigan', 'car mirror', 'carousel', 'tool kit', 'carton', 'car wheel', 'automated teller machine', 'cassette', 'cassette player', 'CD player', 'cello', 'mobile phone', 'chain', 'chain mail', 'chainsaw', 'chest', 'chiffonier', 'chime', 'china cabinet', 'Christmas stocking', 'church', 'movie theater', 'cleaver', 'cliff dwelling', 'cloak', 'clogs', 'cocktail shaker', 'coffee mug', 'coffeemaker', 'coil', 'combination lock', 'computer keyboard', 'confectionery store', 'convertible', 'corkscrew', 'cornet', 'cowboy boot', 'cowboy hat', 'cradle', 'crane (machine)', 'crash helmet', 'crate', 'infant bed', 'Crock Pot', 'croquet ball', 'crutch', 'cuirass', 'dam', 'desk', 'desktop computer', 'rotary dial telephone', 'diaper', 'digital clock', 'digital watch', 'dining table', 'dishcloth', 'dishwasher', 'disc brake', 'dock', 'dome', 'doormat', 'drilling rig', 'drum', 'drumstick', 'dumbbell', 'Dutch oven', 'electric fan', 'electric guitar', 'envelope', 'espresso machine', 'face powder', 'feather boa', 'filing cabinet', 'fireboat', 'fire screen sheet', 'flagpole', 'flute', 'folding chair', 'football helmet', 'forklift', 'fountain', 'fountain pen', 'four-poster bed', 'freight car', 'French horn', 'frying pan', 'fur coat', 'gas mask', 'gas pump', 'goblet', 'golf ball', 'golf cart', 'gondola', 'gong', 'gown', 'grand piano', 'grille', 'grocery store', 'guillotine', 'barrette', 'hair spray', 'hammer', 'hamper', 'hair dryer', 'hand-held computer', 'handkerchief', 'harmonica', 'harp', 'hatchet', 'holster', 'home theater', 'hook', 'hoop skirt', 'horizontal bar', 'hourglass', 'iPod', 'clothes iron', "jack-o'-lantern", 'jeans', 'T-shirt', 'pulled rickshaw', 'joystick', 'kimono', 'knee pad', 'knot', 'lab coat', 'ladle', 'lampshade', 'laptop computer', 'lens cap', 'library', 'limousine', 'ocean liner', 'lipstick', 'slip-on shoe', 'lotion', 'speaker', 'sawmill', 'magnetic compass', 'mail bag', 'mailbox', 'tights', 'tank suit', 'manhole cover', 'maraca', 'marimba', 'mask', 'match', 'maypole', 'maze', 'medicine chest', 'megalith', 'microphone', 'microwave oven', 'military uniform', 'milk can', 'minibus', 'miniskirt', 'minivan', 'missile', 'mitten', 'mobile home', 'Model T', 'modem', 'monastery', 'monitor', 'square academic cap', 'mosque', 'mosquito net', 'scooter', 'mountain bike', 'tent', 'mousetrap', 'moving van', 'muzzle', 'nail', 'neck brace', 'necklace', 'nipple', 'notebook computer', 'obelisk', 'oboe', 'ocarina', 'oil filter', 'organ', 'oscilloscope', 'overskirt', 'oxygen mask', 'packet', 'paddle', 'padlock', 'paintbrush', 'pajamas', 'palace', 'pan flute', 'paper towel', 'parachute', 'parallel bars', 'park bench', 'passenger car', 'patio', 'payphone', 'pedestal', 'pencil case', 'pencil sharpener', 'perfume', 'Petri dish', 'photocopier', 'plectrum', 'Pickelhaube', 'picket fence', 'pier', 'piggy bank', 'pill bottle', 'pillow', 'ping-pong ball', 'pirate ship', 'pitcher', 'planetarium', 'plastic bag', 'plate rack', 'plunger', 'Polaroid camera', 'pole', 'poncho', 'billiard table', 'soda bottle', 'pot', "potter's wheel", 'power drill', 'prayer rug', 'printer', 'prison', 'projectile', 'projector', 'punching bag', 'purse', 'quill', 'quilt', 'race car', 'racket', 'radiator', 'radio', 'radio telescope', 'rain barrel', 'recreational vehicle', 'reel', 'reflex camera', 'refrigerator', 'remote control', 'restaurant', 'revolver', 'rifle', 'rocking chair', 'rotisserie', 'rugby ball', 'ruler', 'running shoe', 'safe', 'safety pin', 'salt shaker', 'sandal', 'sarong', 'saxophone', 'scabbard', 'weighing scale', 'school bus', 'schooner', 'CRT screen', 'screw', 'screwdriver', 'seat belt', 'sewing machine', 'shield', 'shoe store', 'shoji', 'shopping basket', 'shopping cart', 'shovel', 'shower cap', 'shower curtain', 'ski mask', 'sleeping bag', 'sliding door', 'slot machine', 'snorkel', 'soap dispenser', 'soccer ball', 'sock', 'solar thermal collector', 'sombrero', 'space bar', 'space heater', 'space shuttle', 'spatula', 'spider web', 'spindle', 'sports car', 'spotlight', 'stage', 'through arch bridge', 'steel drum', 'stethoscope', 'scarf', 'stopwatch', 'stove', 'strainer', 'tram', 'stretcher', 'couch', 'stupa', 'submarine', 'suit', 'sundial', 'sunglass', 'sunglasses', 'sunscreen', 'suspension bridge', 'mop', 'sweatshirt', 'swimsuit', 'swing', 'switch', 'syringe', 'table lamp', 'tape player', 'teapot', 'teddy bear', 'television', 'tennis ball', 'front curtain', 'thimble', 'throne', 'tile roof', 'toaster', 'tobacco shop', 'toilet seat', 'torch', 'totem pole', 'toy store', 'semi-trailer truck', 'tray', 'trench coat', 'tricycle', 'trimaran', 'tripod', 'trombone', 'tub', 'turnstile', 'typewriter keyboard', 'umbrella', 'unicycle', 'upright piano', 'vacuum cleaner', 'vase', 'vault', 'velvet', 'vending machine', 'vestment', 'violin', 'waffle iron', 'wall clock', 'wallet', 'wardrobe', 'military aircraft', 'sink', 'washing machine', 'water bottle', 'water jug', 'water tower', 'whiskey jug', 'whistle', 'wig', 'window screen', 'window shade', 'Windsor tie', 'wine bottle', 'wing', 'wok', 'wooden spoon', 'wool', 'split-rail fence', 'yawl', 'yurt', 'website', 'comic book', 'crossword', 'traffic sign', 'traffic light', 'dust jacket', 'menu', 'plate', 'consomme', 'hot pot', 'ice pop', 'pretzel', 'hot dog', 'cabbage', 'zucchini', 'butternut squash', 'cucumber', 'mushroom', 'orange', 'pineapple', 'banana', 'jackfruit', 'custard apple', 'chocolate syrup', 'dough', 'pizza', 'pot pie', 'burrito', 'red wine', 'espresso', 'cup', 'bubble', 'cliff', 'coral reef', 'geyser', 'lakeshore', 'promontory', 'shoal', 'seashore', 'valley', 'volcano', 'baseball player', 'bridegroom', 'scuba diver', "yellow lady's slipper", 'corn', 'coral fungus', 'agaric', 'gyromitra', 'earth star', 'hen-of-the-woods', 'bolete', 'toilet paper']
+The prediction set is: []
+The prediction set is: ['tennis ball']
+The prediction set is: []
+The prediction set is: ['jay', 'tick', 'grey parrot', 'macaw', 'slug', 'common gallinule', 'Pekingese', 'Shih Tzu', 'Papillon', 'West Highland White Terrier', 'Shetland Sheepdog', 'collie', 'rhinoceros beetle', 'dragonfly', 'damselfly', 'sea urchin', 'accordion', 'analog clock', 'backpack', 'ballpoint pen', 'Band-Aid', 'bassoon', 'beaker', 'bib', 'ring binder', 'bolo tie', 'bookcase', 'bookstore', 'bow', 'bow tie', 'broom', 'bucket', 'buckle', 'cauldron', 'candle', 'can opener', 'tool kit', 'carton', 'cassette', 'cassette player', 'CD player', 'mobile phone', 'chain', 'chime', 'Christmas stocking', 'cloak', 'coffee mug', 'coil', 'computer keyboard', 'croquet ball', 'crutch', 'desk', 'digital clock', 'digital watch', 'dishcloth', 'drum', 'drumstick', 'electric guitar', 'envelope', 'face powder', 'feather boa', 'filing cabinet', 'flute', 'fountain pen', 'grand piano', 'barrette', 'hair spray', 'hammer', 'hand-held computer', 'handkerchief', 'hard disk drive', 'harmonica', 'hook', 'iPod', 'jeans', 'jigsaw puzzle', 'knot', 'lab coat', 'ladle', 'laptop computer', 'lens cap', 'paper knife', 'library', 'lighter', 'lipstick', 'lotion', 'loupe', 'mail bag', 'maraca', 'marimba', 'mask', 'match', 'maypole', 'medicine chest', 'microphone', 'mitten', 'modem', 'square academic cap', 'computer mouse', 'nail', 'necklace', 'nipple', 'oboe', 'ocarina', 'oil filter', 'organ', 'oscilloscope', 'packet', 'paintbrush', 'pan flute', 'paper towel', 'pencil case', 'pencil sharpener', 'perfume', 'plectrum', 'pinwheel', 'plunger', 'pole', 'pot', 'printer', 'purse', 'quill', 'racket', 'radio', 'reel', 'remote control', 'revolver', 'rifle', 'eraser', 'ruler', 'safety pin', 'scabbard', 'screw', 'screwdriver', 'shovel', 'ski', 'slide rule', 'snorkel', 'sock', 'sombrero', 'soup bowl', 'spatula', 'spindle', 'steel drum', 'stethoscope', 'scarf', 'strainer', 'sunglass', 'sunglasses', 'sunscreen', 'mop', 'switch', 'syringe', 'tape player', 'tennis ball', 'thimble', 'torch', 'tray', 'tripod', 'umbrella', 'velvet', 'violin', 'wall clock', 'wallet', 'water bottle', 'whistle', 'wig', 'wooden spoon', 'wool', 'comic book', 'crossword', 'dust jacket', 'ice pop', 'toilet paper']
+The prediction set is: ['grey parrot', 'macaw', 'lorikeet']</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <p><img src="2023-04-25-cp_files/figure-html/cell-51-output-3.png" class="img-fluid"></p>
 </div>
-<div class="cell-output cell-output-stdout">
-<pre><code>The prediction set is: ['Otterhound', 'Border Terrier', 'Norfolk Terrier', 'Norwich Terrier', 'Yorkshire Terrier', 'Wire Fox Terrier', 'Lakeland Terrier', 'Airedale Terrier', 'Cairn Terrier', 'Australian Terrier', 'Dandie Dinmont Terrier', 'Miniature Schnauzer', 'Standard Schnauzer', 'Scottish Terrier', 'Australian Silky Terrier', 'German Shepherd Dog']</code></pre>
+<div class="cell-output cell-output-display">
+<p><img src="2023-04-25-cp_files/figure-html/cell-51-output-4.png" class="img-fluid"></p>
 </div>
 <div class="cell-output cell-output-display">
 <p><img src="2023-04-25-cp_files/figure-html/cell-51-output-5.png" class="img-fluid"></p>
 </div>
-<div class="cell-output cell-output-stdout">
-<pre><code>The prediction set is: ['goldfish', 'tiger shark', 'cock', 'house finch', 'agama', 'triceratops', 'ring-necked snake', 'sea snake', 'southern black widow', 'centipede', 'black grouse', 'prairie grouse', 'grey parrot', 'macaw', 'lorikeet', 'hornbill', 'hummingbird', 'toucan', 'flatworm', 'nematode', 'sea slug', 'fiddler crab', 'American lobster', 'spiny lobster', 'crayfish', 'hermit crab', 'isopod', 'crane (bird)', 'oystercatcher', 'Bloodhound', 'Miniature Schnauzer', 'Giant Schnauzer', 'Standard Schnauzer', 'Labrador Retriever', 'English Setter', 'Gordon Setter', 'Brittany', 'Cocker Spaniels', 'Sussex Spaniel', 'Rottweiler', 'Greater Swiss Mountain Dog', 'Dalmatian', 'cougar', 'tiger', 'polar bear', 'mongoose', 'ladybug', 'stick insect', 'cockroach', 'leafhopper', 'damselfly', 'red admiral', 'gossamer-winged butterfly', 'sea cucumber', 'hamster', 'beaver', 'guinea pig', 'pig', 'weasel', 'mink', 'European polecat', 'black-footed ferret', 'skunk', 'badger', 'macaque', 'marmoset', 'red panda', 'eel', 'coho salmon', 'rock beauty', 'clownfish', 'sturgeon', 'garfish', 'lionfish', 'aircraft carrier', 'airliner', 'airship', 'ambulance', 'amphibious vehicle', 'analog clock', 'apiary', 'waste container', 'assault rifle', 'backpack', 'balance beam', 'balloon', 'Band-Aid', 'baluster', 'barber chair', 'barbershop', 'barometer', 'barrel', 'wheelbarrow', 'baseball', 'swimming cap', 'bathtub', 'station wagon', 'lighthouse', 'beaker', 'beer bottle', 'binoculars', 'birdhouse', 'boathouse', 'bolo tie', 'bottle cap', 'breakwater', 'broom', 'buckle', 'bulletproof vest', 'high-speed train', 'taxicab', 'cannon', 'canoe', 'can opener', 'car mirror', 'carousel', 'tool kit', 'car wheel', 'automated teller machine', 'cassette', 'cassette player', 'catamaran', 'CD player', 'mobile phone', 'chain', 'chain-link fence', 'chainsaw', 'movie theater', 'coffeemaker', 'computer keyboard', 'container ship', 'convertible', 'cowboy hat', 'crane (machine)', 'crash helmet', 'crate', 'crutch', 'dam', 'desk', 'desktop computer', 'rotary dial telephone', 'digital clock', 'digital watch', 'dishwasher', 'disc brake', 'dock', 'dog sled', 'drilling rig', 'dumbbell', 'Dutch oven', 'electric fan', 'electric locomotive', 'envelope', 'feather boa', 'fireboat', 'fire engine', 'football helmet', 'forklift', 'freight car', 'frying pan', 'garbage truck', 'gas mask', 'gas pump', 'go-kart', 'golf ball', 'golf cart', 'grille', 'grocery store', 'guillotine', 'barrette', 'half-track', 'hammer', 'hand-held computer', 'hard disk drive', 'harvester', 'hatchet', 'holster', 'honeycomb', 'hook', 'horizontal bar', 'horse-drawn vehicle', "jack-o'-lantern", 'jeep', 'jigsaw puzzle', 'pulled rickshaw', 'joystick', 'knot', 'lab coat', 'ladle', 'laptop computer', 'lawn mower', 'lifeboat', 'lighter', 'limousine', 'ocean liner', 'speaker', 'sawmill', 'magnetic compass', 'mailbox', 'manhole cover', 'match', 'maze', 'medicine chest', 'microwave oven', 'military uniform', 'milk can', 'minibus', 'minivan', 'missile', 'mobile home', 'Model T', 'modem', 'monitor', 'moped', 'mortar', 'scooter', 'mountain bike', 'tent', 'computer mouse', 'mousetrap', 'moving van', 'neck brace', 'odometer', 'oil filter', 'oscilloscope', 'bullock cart', 'oxygen mask', 'packet', 'paddle wheel', 'padlock', 'paintbrush', 'parachute', 'parking meter', 'passenger car', 'payphone', 'pencil case', 'pencil sharpener', 'Petri dish', 'photocopier', 'picket fence', 'pickup truck', 'pier', 'pill bottle', 'ping-pong ball', 'hand plane', 'plow', 'plunger', 'Polaroid camera', 'pole', 'police van', 'soda bottle', 'power drill', 'printer', 'projectile', 'projector', 'hockey puck', 'punching bag', 'race car', 'radiator', 'radio', 'radio telescope', 'rain barrel', 'recreational vehicle', 'reflex camera', 'refrigerator', 'remote control', 'restaurant', 'revolver', 'rifle', 'rotisserie', 'eraser', 'ruler', 'running shoe', 'safe', 'sandal', 'weighing scale', 'school bus', 'scoreboard', 'CRT screen', 'screw', 'screwdriver', 'seat belt', 'sewing machine', 'shopping cart', 'shovel', 'ski', 'sleeping bag', 'slide rule', 'sliding door', 'slot machine', 'snorkel', 'snowmobile', 'snowplow', 'solar thermal collector', 'space bar', 'space heater', 'space shuttle', 'motorboat', 'sports car', 'spotlight', 'steam locomotive', 'through arch bridge', 'stopwatch', 'stove', 'strainer', 'tram', 'stretcher', 'suspension bridge', 'mop', 'swing', 'switch', 'syringe', 'tank', 'tape player', 'television', 'threshing machine', 'tile roof', 'toaster', 'toilet seat', 'torch', 'totem pole', 'tow truck', 'toy store', 'tractor', 'semi-trailer truck', 'tray', 'trimaran', 'trolleybus', 'tub', 'turnstile', 'typewriter keyboard', 'viaduct', 'wall clock', 'military aircraft', 'sink', 'washing machine', 'water bottle', 'water tower', 'whistle', 'wing', 'shipwreck', 'yurt', 'website', 'traffic sign', 'traffic light', 'dust jacket', 'ice pop', 'hot dog', 'spaghetti squash', 'acorn squash', 'butternut squash', 'cucumber', 'hay', 'meatloaf', 'burrito', 'alp', 'bubble', 'cliff', 'coral reef', 'volcano', 'baseball player', 'scuba diver', 'rapeseed', 'corn', 'coral fungus', 'agaric', 'stinkhorn mushroom', 'ear']</code></pre>
+<div class="cell-output cell-output-display">
+<p><img src="2023-04-25-cp_files/figure-html/cell-51-output-6.png" class="img-fluid"></p>
 </div>
 <div class="cell-output cell-output-display">
 <p><img src="2023-04-25-cp_files/figure-html/cell-51-output-7.png" class="img-fluid"></p>
 </div>
-<div class="cell-output cell-output-stdout">
-<pre><code>The prediction set is: ['alligator lizard', 'trilobite', 'scorpion', 'tick', 'centipede', 'conch', 'snail', 'chiton', 'crayfish', 'hermit crab', 'isopod', 'ground beetle', 'weevil', 'cockroach', 'cicada', 'sea cucumber', 'armadillo', 'corn']</code></pre>
+<div class="cell-output cell-output-display">
+<p><img src="2023-04-25-cp_files/figure-html/cell-51-output-8.png" class="img-fluid"></p>
 </div>
 <div class="cell-output cell-output-display">
 <p><img src="2023-04-25-cp_files/figure-html/cell-51-output-9.png" class="img-fluid"></p>
 </div>
-<div class="cell-output cell-output-stdout">
-<pre><code>The prediction set is: ['tench', 'great white shark', 'tiger shark', 'hammerhead shark', 'electric ray', 'stingray', 'cock', 'hen', 'house finch', 'junco', 'indigo bunting', 'vulture', 'spotted salamander', 'loggerhead sea turtle', 'leatherback sea turtle', 'green iguana', 'desert grassland whiptail lizard', 'frilled-necked lizard', 'Gila monster', 'European green lizard', 'triceratops', 'eastern hog-nosed snake', 'kingsnake', 'vine snake', 'night snake', 'boa constrictor', 'harvestman', 'scorpion', 'yellow garden spider', 'barn spider', 'European garden spider', 'southern black widow', 'tarantula', 'tick', 'centipede', 'black grouse', 'ruffed grouse', 'prairie grouse', 'partridge', 'grey parrot', 'macaw', 'sulphur-crested cockatoo', 'coucal', 'hornbill', 'toucan', 'tusker', 'echidna', 'wombat', 'jellyfish', 'sea anemone', 'flatworm', 'conch', 'slug', 'chambered nautilus', 'Dungeness crab', 'rock crab', 'red king crab', 'American lobster', 'spiny lobster', 'crayfish', 'hermit crab', 'isopod', 'American coot', 'dunlin', 'king penguin', 'albatross', 'grey whale', 'killer whale', 'dugong', 'sea lion', 'Chihuahua', 'Japanese Chin', 'Maltese', 'Pekingese', 'Shih Tzu', 'King Charles Spaniel', 'toy terrier', 'Rhodesian Ridgeback', 'Afghan Hound', 'Basset Hound', 'Beagle', 'Bloodhound', 'Bluetick Coonhound', 'Black and Tan Coonhound', 'Treeing Walker Coonhound', 'English foxhound', 'Redbone Coonhound', 'borzoi', 'Italian Greyhound', 'Weimaraner', 'Staffordshire Bull Terrier', 'American Staffordshire Terrier', 'Bedlington Terrier', 'Kerry Blue Terrier', 'Irish Terrier', 'Norfolk Terrier', 'Norwich Terrier', 'Yorkshire Terrier', 'Lakeland Terrier', 'Sealyham Terrier', 'Cairn Terrier', 'Australian Terrier', 'Dandie Dinmont Terrier', 'Boston Terrier', 'Miniature Schnauzer', 'Giant Schnauzer', 'Scottish Terrier', 'Tibetan Terrier', 'Australian Silky Terrier', 'Soft-coated Wheaten Terrier', 'West Highland White Terrier', 'Lhasa Apso', 'Flat-Coated Retriever', 'Curly-coated Retriever', 'Golden Retriever', 'Labrador Retriever', 'Chesapeake Bay Retriever', 'German Shorthaired Pointer', 'Vizsla', 'Gordon Setter', 'Brittany', 'Clumber Spaniel', 'English Springer Spaniel', 'Cocker Spaniels', 'Sussex Spaniel', 'Irish Water Spaniel', 'Kuvasz', 'Schipperke', 'Groenendael', 'Briard', 'Australian Kelpie', 'Komondor', 'Old English Sheepdog', 'Bouvier des Flandres', 'Rottweiler', 'German Shepherd Dog', 'Dobermann', 'Miniature Pinscher', 'Greater Swiss Mountain Dog', 'Bernese Mountain Dog', 'Appenzeller Sennenhund', 'Entlebucher Sennenhund', 'Boxer', 'Bullmastiff', 'Tibetan Mastiff', 'French Bulldog', 'Great Dane', 'husky', 'Alaskan Malamute', 'Siberian Husky', 'Dalmatian', 'Affenpinscher', 'Basenji', 'pug', 'Leonberger', 'Newfoundland', 'Pyrenean Mountain Dog', 'Samoyed', 'Pomeranian', 'Chow Chow', 'Griffon Bruxellois', 'Pembroke Welsh Corgi', 'Toy Poodle', 'Miniature Poodle', 'Standard Poodle', 'Mexican hairless dog', 'Alaskan tundra wolf', 'tabby cat', 'tiger cat', 'Persian cat', 'Siamese cat', 'Egyptian Mau', 'leopard', 'American black bear', 'ground beetle', 'rhinoceros beetle', 'grasshopper', 'cricket', 'stick insect', 'cockroach', 'mantis', 'ringlet', 'monarch butterfly', 'starfish', 'sea urchin', 'cottontail rabbit', 'Angora rabbit', 'hamster', 'porcupine', 'beaver', 'common sorrel', 'zebra', 'hippopotamus', 'ox', 'water buffalo', 'weasel', 'mink', 'European polecat', 'black-footed ferret', 'armadillo', 'gibbon', 'Asian elephant', 'African bush elephant', 'snoek', 'eel', 'coho salmon', 'rock beauty', 'sturgeon', 'garfish', 'lionfish', 'abacus', 'abaya', 'academic gown', 'accordion', 'acoustic guitar', 'aircraft carrier', 'airship', 'altar', 'ambulance', 'analog clock', 'apron', 'waste container', 'assault rifle', 'backpack', 'bakery', 'balloon', 'Band-Aid', 'banjo', 'baluster', 'barbell', 'barber chair', 'barbershop', 'barometer', 'barrel', 'baseball', 'basketball', 'bassinet', 'bassoon', 'swimming cap', 'bath towel', 'bathtub', 'station wagon', 'lighthouse', 'beaker', 'military cap', 'beer bottle', 'beer glass', 'bell-cot', 'bib', 'tandem bicycle', 'bikini', 'ring binder', 'binoculars', 'bobsleigh', 'bolo tie', 'poke bonnet', 'bookcase', 'bookstore', 'bow', 'bow tie', 'brass', 'bra', 'breastplate', 'broom', 'bucket', 'buckle', 'bulletproof vest', 'high-speed train', 'butcher shop', 'taxicab', 'cauldron', 'candle', 'cannon', 'can opener', 'cardigan', 'car mirror', 'carousel', 'tool kit', 'carton', 'car wheel', 'automated teller machine', 'cassette', 'cassette player', 'CD player', 'cello', 'mobile phone', 'chain', 'chain mail', 'chainsaw', 'chest', 'chiffonier', 'chime', 'china cabinet', 'Christmas stocking', 'church', 'movie theater', 'cleaver', 'cliff dwelling', 'cloak', 'clogs', 'cocktail shaker', 'coffee mug', 'coffeemaker', 'coil', 'combination lock', 'computer keyboard', 'confectionery store', 'convertible', 'corkscrew', 'cornet', 'cowboy boot', 'cowboy hat', 'cradle', 'crane (machine)', 'crash helmet', 'crate', 'infant bed', 'Crock Pot', 'croquet ball', 'crutch', 'cuirass', 'dam', 'desk', 'desktop computer', 'rotary dial telephone', 'diaper', 'digital clock', 'digital watch', 'dining table', 'dishcloth', 'dishwasher', 'disc brake', 'dock', 'dome', 'doormat', 'drilling rig', 'drum', 'drumstick', 'dumbbell', 'Dutch oven', 'electric fan', 'electric guitar', 'envelope', 'espresso machine', 'face powder', 'feather boa', 'filing cabinet', 'fireboat', 'fire screen sheet', 'flagpole', 'flute', 'folding chair', 'football helmet', 'forklift', 'fountain', 'fountain pen', 'four-poster bed', 'freight car', 'French horn', 'frying pan', 'fur coat', 'gas mask', 'gas pump', 'goblet', 'golf ball', 'golf cart', 'gondola', 'gong', 'gown', 'grand piano', 'grille', 'grocery store', 'guillotine', 'barrette', 'hair spray', 'hammer', 'hamper', 'hair dryer', 'hand-held computer', 'handkerchief', 'harmonica', 'harp', 'hatchet', 'holster', 'home theater', 'hook', 'hoop skirt', 'horizontal bar', 'hourglass', 'iPod', 'clothes iron', "jack-o'-lantern", 'jeans', 'T-shirt', 'pulled rickshaw', 'joystick', 'kimono', 'knee pad', 'knot', 'lab coat', 'ladle', 'lampshade', 'laptop computer', 'lens cap', 'library', 'limousine', 'ocean liner', 'lipstick', 'slip-on shoe', 'lotion', 'speaker', 'sawmill', 'magnetic compass', 'mail bag', 'mailbox', 'tights', 'tank suit', 'manhole cover', 'maraca', 'marimba', 'mask', 'match', 'maypole', 'maze', 'medicine chest', 'megalith', 'microphone', 'microwave oven', 'military uniform', 'milk can', 'minibus', 'miniskirt', 'minivan', 'missile', 'mitten', 'mobile home', 'Model T', 'modem', 'monastery', 'monitor', 'square academic cap', 'mosque', 'mosquito net', 'scooter', 'mountain bike', 'tent', 'mousetrap', 'moving van', 'muzzle', 'nail', 'neck brace', 'necklace', 'nipple', 'notebook computer', 'obelisk', 'oboe', 'ocarina', 'oil filter', 'organ', 'oscilloscope', 'overskirt', 'oxygen mask', 'packet', 'paddle', 'padlock', 'paintbrush', 'pajamas', 'palace', 'pan flute', 'paper towel', 'parachute', 'parallel bars', 'park bench', 'passenger car', 'patio', 'payphone', 'pedestal', 'pencil case', 'pencil sharpener', 'perfume', 'Petri dish', 'photocopier', 'plectrum', 'Pickelhaube', 'picket fence', 'pier', 'piggy bank', 'pill bottle', 'pillow', 'ping-pong ball', 'pirate ship', 'pitcher', 'planetarium', 'plastic bag', 'plate rack', 'plunger', 'Polaroid camera', 'pole', 'poncho', 'billiard table', 'soda bottle', 'pot', "potter's wheel", 'power drill', 'prayer rug', 'printer', 'prison', 'projectile', 'projector', 'punching bag', 'purse', 'quill', 'quilt', 'race car', 'racket', 'radiator', 'radio', 'radio telescope', 'rain barrel', 'recreational vehicle', 'reel', 'reflex camera', 'refrigerator', 'remote control', 'restaurant', 'revolver', 'rifle', 'rocking chair', 'rotisserie', 'rugby ball', 'ruler', 'running shoe', 'safe', 'safety pin', 'salt shaker', 'sandal', 'sarong', 'saxophone', 'scabbard', 'weighing scale', 'school bus', 'schooner', 'CRT screen', 'screw', 'screwdriver', 'seat belt', 'sewing machine', 'shield', 'shoe store', 'shoji', 'shopping basket', 'shopping cart', 'shovel', 'shower cap', 'shower curtain', 'ski mask', 'sleeping bag', 'sliding door', 'slot machine', 'snorkel', 'soap dispenser', 'soccer ball', 'sock', 'solar thermal collector', 'sombrero', 'space bar', 'space heater', 'space shuttle', 'spatula', 'spider web', 'spindle', 'sports car', 'spotlight', 'stage', 'through arch bridge', 'steel drum', 'stethoscope', 'scarf', 'stopwatch', 'stove', 'strainer', 'tram', 'stretcher', 'couch', 'stupa', 'submarine', 'suit', 'sundial', 'sunglass', 'sunglasses', 'sunscreen', 'suspension bridge', 'mop', 'sweatshirt', 'swimsuit', 'swing', 'switch', 'syringe', 'table lamp', 'tape player', 'teapot', 'teddy bear', 'television', 'tennis ball', 'front curtain', 'thimble', 'throne', 'tile roof', 'toaster', 'tobacco shop', 'toilet seat', 'torch', 'totem pole', 'toy store', 'semi-trailer truck', 'tray', 'trench coat', 'tricycle', 'trimaran', 'tripod', 'trombone', 'tub', 'turnstile', 'typewriter keyboard', 'umbrella', 'unicycle', 'upright piano', 'vacuum cleaner', 'vase', 'vault', 'velvet', 'vending machine', 'vestment', 'violin', 'waffle iron', 'wall clock', 'wallet', 'wardrobe', 'military aircraft', 'sink', 'washing machine', 'water bottle', 'water jug', 'water tower', 'whiskey jug', 'whistle', 'wig', 'window screen', 'window shade', 'Windsor tie', 'wine bottle', 'wing', 'wok', 'wooden spoon', 'wool', 'split-rail fence', 'yawl', 'yurt', 'website', 'comic book', 'crossword', 'traffic sign', 'traffic light', 'dust jacket', 'menu', 'plate', 'consomme', 'hot pot', 'ice pop', 'pretzel', 'hot dog', 'cabbage', 'zucchini', 'butternut squash', 'cucumber', 'mushroom', 'orange', 'pineapple', 'banana', 'jackfruit', 'custard apple', 'chocolate syrup', 'dough', 'pizza', 'pot pie', 'burrito', 'red wine', 'espresso', 'cup', 'bubble', 'cliff', 'coral reef', 'geyser', 'lakeshore', 'promontory', 'shoal', 'seashore', 'valley', 'volcano', 'baseball player', 'bridegroom', 'scuba diver', "yellow lady's slipper", 'corn', 'coral fungus', 'agaric', 'gyromitra', 'earth star', 'hen-of-the-woods', 'bolete', 'toilet paper']</code></pre>
+<div class="cell-output cell-output-display">
+<p><img src="2023-04-25-cp_files/figure-html/cell-51-output-10.png" class="img-fluid"></p>
 </div>
 <div class="cell-output cell-output-display">
 <p><img src="2023-04-25-cp_files/figure-html/cell-51-output-11.png" class="img-fluid"></p>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>The prediction set is: []</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<p><img src="2023-04-25-cp_files/figure-html/cell-51-output-13.png" class="img-fluid"></p>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>The prediction set is: ['tennis ball']</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<p><img src="2023-04-25-cp_files/figure-html/cell-51-output-15.png" class="img-fluid"></p>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>The prediction set is: []</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<p><img src="2023-04-25-cp_files/figure-html/cell-51-output-17.png" class="img-fluid"></p>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>The prediction set is: ['jay', 'tick', 'grey parrot', 'macaw', 'slug', 'common gallinule', 'Pekingese', 'Shih Tzu', 'Papillon', 'West Highland White Terrier', 'Shetland Sheepdog', 'collie', 'rhinoceros beetle', 'dragonfly', 'damselfly', 'sea urchin', 'accordion', 'analog clock', 'backpack', 'ballpoint pen', 'Band-Aid', 'bassoon', 'beaker', 'bib', 'ring binder', 'bolo tie', 'bookcase', 'bookstore', 'bow', 'bow tie', 'broom', 'bucket', 'buckle', 'cauldron', 'candle', 'can opener', 'tool kit', 'carton', 'cassette', 'cassette player', 'CD player', 'mobile phone', 'chain', 'chime', 'Christmas stocking', 'cloak', 'coffee mug', 'coil', 'computer keyboard', 'croquet ball', 'crutch', 'desk', 'digital clock', 'digital watch', 'dishcloth', 'drum', 'drumstick', 'electric guitar', 'envelope', 'face powder', 'feather boa', 'filing cabinet', 'flute', 'fountain pen', 'grand piano', 'barrette', 'hair spray', 'hammer', 'hand-held computer', 'handkerchief', 'hard disk drive', 'harmonica', 'hook', 'iPod', 'jeans', 'jigsaw puzzle', 'knot', 'lab coat', 'ladle', 'laptop computer', 'lens cap', 'paper knife', 'library', 'lighter', 'lipstick', 'lotion', 'loupe', 'mail bag', 'maraca', 'marimba', 'mask', 'match', 'maypole', 'medicine chest', 'microphone', 'mitten', 'modem', 'square academic cap', 'computer mouse', 'nail', 'necklace', 'nipple', 'oboe', 'ocarina', 'oil filter', 'organ', 'oscilloscope', 'packet', 'paintbrush', 'pan flute', 'paper towel', 'pencil case', 'pencil sharpener', 'perfume', 'plectrum', 'pinwheel', 'plunger', 'pole', 'pot', 'printer', 'purse', 'quill', 'racket', 'radio', 'reel', 'remote control', 'revolver', 'rifle', 'eraser', 'ruler', 'safety pin', 'scabbard', 'screw', 'screwdriver', 'shovel', 'ski', 'slide rule', 'snorkel', 'sock', 'sombrero', 'soup bowl', 'spatula', 'spindle', 'steel drum', 'stethoscope', 'scarf', 'strainer', 'sunglass', 'sunglasses', 'sunscreen', 'mop', 'switch', 'syringe', 'tape player', 'tennis ball', 'thimble', 'torch', 'tray', 'tripod', 'umbrella', 'velvet', 'violin', 'wall clock', 'wallet', 'water bottle', 'whistle', 'wig', 'wooden spoon', 'wool', 'comic book', 'crossword', 'dust jacket', 'ice pop', 'toilet paper']</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<p><img src="2023-04-25-cp_files/figure-html/cell-51-output-19.png" class="img-fluid"></p>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>The prediction set is: ['grey parrot', 'macaw', 'lorikeet']</code></pre>
 </div>
 </div>
 
@@ -2432,9 +2394,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -2499,6 +2475,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
