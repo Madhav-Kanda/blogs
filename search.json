@@ -81,7 +81,7 @@
     "href": "posts/2023-07-21-wnr.html#results",
     "title": "Windowed Non-Linear Reparamaterization",
     "section": "Results",
-    "text": "Results\n\n\n&lt;img width=\"400\" alt=\"image\" src=\"images/wnr/true_calculated.png\"&gt;\n\n\n\n\n\n\n\nLets’ compare the sampling efficieny\n\n\\[\\begin{array}{c} \\hline\nParameter & ESS/ \\nabla (vip) & ESS/ \\nabla (our) \\\\ \\hline\n\\mu & 9.27*10^{-4} & 5.54*10^{-4} \\\\\n\\tau & 4.22*10^{-5} & \\textbf{$5.07*10^{-4}$} \\\\\n\\theta & 9.73*10^{-4} & \\textbf{$1.66*10^{-3}$} \\\\ \\hline\n\\end{array}\\]\n\nOur ESS/ \\(\\nabla\\) results better then the ones produced by existing methods."
+    "text": "Results\n\n&lt;img width=\"400\" alt=\"image\" src=\"images/wnr/true_calculated.png\"&gt;\n\n\n\n\n\n\nLets’ compare the sampling efficieny\n\n\\[\\begin{array}{c} \\hline\nParameter & ESS/ \\nabla (vip) & ESS/ \\nabla (our) \\\\ \\hline\n\\mu & 9.27*10^{-4} & 5.54*10^{-4} \\\\\n\\tau & 4.22*10^{-5} & \\textbf{$5.07*10^{-4}$} \\\\\n\\theta & 9.73*10^{-4} & \\textbf{$1.66*10^{-3}$} \\\\ \\hline\n\\end{array}\\]\n\nOur ESS/ \\(\\nabla\\) results better then the ones produced by existing methods."
   },
   {
     "objectID": "posts/2023-07-21-wnr.html#future-work",
