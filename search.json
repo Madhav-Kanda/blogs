@@ -84,13 +84,6 @@
     "text": "Results\n\n\n\n\nLets’ compare the sampling efficieny\n\n\\[\\begin{array}{c} \\hline\nParameter & ESS/ \\nabla (vip) & ESS/ \\nabla (our) \\\\ \\hline\n\\mu & 9.27*10^{-4} & 5.54*10^{-4} \\\\\n\\tau & 4.22*10^{-5} & \\textbf{$5.07*10^{-4}$} \\\\\n\\theta & 9.73*10^{-4} & \\textbf{$1.66*10^{-3}$} \\\\ \\hline\n\\end{array}\\]\n\nOur ESS/ \\(\\nabla\\) results better then the ones produced by existing methods."
   },
   {
-    "objectID": "posts/2023-07-21-wnr.html#results-1",
-    "href": "posts/2023-07-21-wnr.html#results-1",
-    "title": "Windowed Non-Linear Reparamaterization",
-    "section": "Results",
-    "text": "Results"
-  },
-  {
     "objectID": "posts/2023-07-21-wnr.html#scalability",
     "href": "posts/2023-07-21-wnr.html#scalability",
     "title": "Windowed Non-Linear Reparamaterization",
@@ -109,7 +102,7 @@
     "href": "posts/2023-07-21-wnr.html#references",
     "title": "Windowed Non-Linear Reparamaterization",
     "section": "References",
-    "text": "References\n[1] M.I.Gorinova,D.Moore,andM.D.Hoffman,“Automaticreparameterisation of probabilistic programs,” 2019.\n[2] M.Hoffman,P.Sountsov,etal.,“Neutra-lizing bad geometry in hamiltonian monte carlo using neural transport,” 2019.\n[3] https://mc-stan.org/docs/reference-manual/hmc-algorithm-parameters.html\n[4] Gabrié, Marylou, Grant M. Rotskoff, and Eric Vanden-Eijnden. 2021. “Efficient Bayesian Sampling Using Normalizing Flows to Assist Markov Chain Monte Carlo Methods.” arXiv. https://doi.org/10.48550/arXiv.2107.08001.\n[5] Hoﬀman, Matthew D, and Andrew Gelman. n.d. “The No-U-Turn Sampler: Adaptively Setting Path Lengths in Hamiltonian Monte Carlo,” 31.\n[6] https://num.pyro.ai/en/0.7.2/examples/funnel.html\n\nQuestions?\n\n\nReach me out: &nbsp; &lt;a&gt;https://madhav-kanda.github.io/&lt;/a&gt;\n\n\nSlides/Notebook link: &nbsp; &lt;a&gt;https://madhav-kanda.github.io/blogs/posts/2023-07-21-wnr.html&lt;/a&gt;\n\n\nWrite up:  https://nsiccha.github.io/parametric-reparametrizations/snapshots/write-up/index_0.1.2.html"
+    "text": "References\n[1] M.I.Gorinova,D.Moore,andM.D.Hoffman,“Automaticreparameterisation of probabilistic programs,” 2019.\n[2] M.Hoffman,P.Sountsov,etal.,“Neutra-lizing bad geometry in hamiltonian monte carlo using neural transport,” 2019.\n[3] https://mc-stan.org/docs/reference-manual/hmc-algorithm-parameters.html\n[4] Gabrié, Marylou, Grant M. Rotskoff, and Eric Vanden-Eijnden. 2021. “Efficient Bayesian Sampling Using Normalizing Flows to Assist Markov Chain Monte Carlo Methods.” arXiv. https://doi.org/10.48550/arXiv.2107.08001.\n[5] Hoﬀman, Matthew D, and Andrew Gelman. n.d. “The No-U-Turn Sampler: Adaptively Setting Path Lengths in Hamiltonian Monte Carlo,” 31.\n[6] https://num.pyro.ai/en/0.7.2/examples/funnel.html"
   },
   {
     "objectID": "posts/2023-04-12-la.html",
