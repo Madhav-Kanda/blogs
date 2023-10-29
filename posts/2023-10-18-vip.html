@@ -182,11 +182,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#variationally-inferred-parameterization" id="toc-variationally-inferred-parameterization" class="nav-link active" data-scroll-target="#variationally-inferred-parameterization">Variationally Inferred Parameterization</a>
   <ul class="collapse">
-  <li><a href="#tutorial-also-hosted-on-numpyro" id="toc-tutorial-also-hosted-on-numpyro" class="nav-link" data-scroll-target="#tutorial-also-hosted-on-numpyro">Tutorial also hosted on Numpyro</a></li>
-  <li><a href="#dataset" id="toc-dataset" class="nav-link" data-scroll-target="#dataset"><strong>1. Dataset</strong></a></li>
-  <li><a href="#model" id="toc-model" class="nav-link" data-scroll-target="#model"><strong>2. Model</strong></a></li>
-  <li><a href="#reparameterization" id="toc-reparameterization" class="nav-link" data-scroll-target="#reparameterization"><strong>3. Reparameterization</strong></a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><strong>4. References:</strong></a></li>
+  <li><a href="#dataset" id="toc-dataset" class="nav-link" data-scroll-target="#dataset">1. Dataset</a></li>
+  <li><a href="#model" id="toc-model" class="nav-link" data-scroll-target="#model">2. Model</a></li>
+  <li><a href="#reparameterization" id="toc-reparameterization" class="nav-link" data-scroll-target="#reparameterization">3. Reparameterization</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">4. References:</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -199,8 +198,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="variationally-inferred-parameterization" class="level1">
 <h1>Variationally Inferred Parameterization</h1>
-<section id="tutorial-also-hosted-on-numpyro" class="level3">
-<h3 class="anchored" data-anchor-id="tutorial-also-hosted-on-numpyro">Tutorial also hosted on <a href="https://num.pyro.ai/en/latest/tutorials/variationally_inferred_parameterization.html">Numpyro</a></h3>
+<section id="tutorial-also-hosted-on-numpyro" class="level4">
+<h4 class="anchored" data-anchor-id="tutorial-also-hosted-on-numpyro">Tutorial also hosted on <a href="https://num.pyro.ai/en/latest/tutorials/variationally_inferred_parameterization.html">Numpyro</a></h4>
 <p>Occasionally, the Hamiltonian Monte Carlo (HMC) sampler encounters challenges in effectively sampling from the posterior distribution. One illustrative case is <a href="https://num.pyro.ai/en/stable/examples/funnel.html">Neal’s funnel</a>. In these situations, the conventional centered parameterization may prove inadequate, leading us to employ non-centered parameterization. However, there are instances where even non-centered parameterization may not suffice, necessitating the utilization of Variationally Inferred Parameterization to attain the desired centeredness within the range of 0 to 1.</p>
 <p>The purpose of this tutorial is to implement <strong>Variationally Inferred Parameterization</strong> based on <a href="https://arxiv.org/abs/1906.03028">Automatic Reparameterization of Probabilistic Programs</a> using <strong>LocScaleReparam</strong> in <strong>Numpyro</strong>.</p>
 <div class="cell">
@@ -224,8 +223,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> numpyro.infer.autoguide <span class="im">import</span> AutoDiagonalNormal</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="dataset" class="level2">
-<h2 class="anchored" data-anchor-id="dataset"><strong>1. Dataset</strong></h2>
+<section id="dataset" class="level3">
+<h3 class="anchored" data-anchor-id="dataset">1. Dataset</h3>
 <p>We will be using the German Credit Dataset for this illustration. The dataset consists of 1000 entries with 20 categorial symbolic attributes prepared by Prof.&nbsp;Hofmann. In this dataset, each entry represents a person who takes a credit by a bank. Each person is classified as good or bad credit risks according to the set of attributes.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> load_german_credit():</span>
@@ -768,8 +767,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> status[jnp.newaxis, <span class="va">Ellipsis</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="model" class="level2">
-<h2 class="anchored" data-anchor-id="model"><strong>2. Model</strong></h2>
+<section id="model" class="level3">
+<h3 class="anchored" data-anchor-id="model">2. Model</h3>
 <p>We will be using a logistic regression model with hierarchical prior on coefficient scales</p>
 <span class="math display">\[\begin{aligned}
 \log \tau_0 &amp; \sim \mathcal{N}(0,10) &amp; \log \tau_i &amp; \sim \mathcal{N}\left(\log \tau_0, 1\right) \\
@@ -941,8 +940,8 @@ Number of divergences: 37</code></pre>
 </div>
 </div>
 </section>
-<section id="reparameterization" class="level2">
-<h2 class="anchored" data-anchor-id="reparameterization"><strong>3. Reparameterization</strong></h2>
+<section id="reparameterization" class="level3">
+<h3 class="anchored" data-anchor-id="reparameterization">3. Reparameterization</h3>
 <p>We introduce a parameterization parameters <span class="math inline">\(\lambda \in [0,1]\)</span> for any variable <span class="math inline">\(z\)</span>, and transform:</p>
 <p>=&gt; <span class="math inline">\(z\)</span> ~ <span class="math inline">\(N (z | μ, σ)\)</span></p>
 <p>=&gt; by defining <span class="math inline">\(z\)</span> ~ <span class="math inline">\(N(λμ, σ^λ)\)</span></p>
@@ -1142,8 +1141,8 @@ Number of divergences: 1</code></pre>
 </div>
 </div>
 </section>
-<section id="references" class="level2">
-<h2 class="anchored" data-anchor-id="references"><strong>4. References:</strong></h2>
+<section id="references" class="level3">
+<h3 class="anchored" data-anchor-id="references">4. References:</h3>
 <ol type="1">
 <li>https://arxiv.org/abs/1906.03028</li>
 <li>https://github.com/mgorinova/autoreparam/tree/master</li>
