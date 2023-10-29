@@ -1,3 +1,6 @@
 /.quarto/
 /_site/
 /publish.txt
+/posts/active_learning_process.ipynb
+/posts/Active Learning CIFAR10.ipynb
+cifar10
